@@ -1,0 +1,150 @@
+{
+  "machine": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "cpus": 14
+  },
+  "tools": {
+    "wk-medic": {
+      "path": "/Users/chris/src/warpkit/.venv/bin/wk-medic",
+      "version": "wk-medic 1.4.1"
+    },
+    "wk-apply-warp": {
+      "path": "/Users/chris/src/warpkit/.venv/bin/wk-apply-warp",
+      "version": "wk-apply-warp 1.4.1"
+    },
+    "niimath": {
+      "path": "/tmp/nmcur/src/niimath",
+      "version": "v1.0.20260724 OpenMP Clang17.0.0 BSD (64-bit MacOS)"
+    }
+  },
+  "threads": [
+    1,
+    10
+  ],
+  "mask": "niimath only",
+  "results": {
+    "echo2": {
+      "echoes": 2,
+      "frames": 170,
+      "runs": {
+        "1": {
+          "niimath": {
+            "estimate": {
+              "wall": 12.360008707997622,
+              "peak_gb": 1.698577880859375,
+              "rc": 0
+            },
+            "apply": {
+              "wall": 8.090034459004528,
+              "peak_gb": 0.591827392578125
+            }
+          },
+          "warpkit": {
+            "estimate": {
+              "wall": 51.53563012499944,
+              "peak_gb": 3.49468994140625,
+              "rc": 0
+            },
+            "apply": {
+              "wall": 770.437784167003,
+              "peak_gb": 1.24560546875
+            }
+          }
+        },
+        "10": {
+          "niimath": {
+            "estimate": {
+              "wall": 3.1513500830042176,
+              "peak_gb": 1.9036865234375,
+              "rc": 0
+            },
+            "apply": {
+              "wall": 1.4088117089995649,
+              "peak_gb": 0.5921173095703125
+            }
+          },
+          "warpkit": {
+            "estimate": {
+              "wall": 14.389809625005,
+              "peak_gb": 4.3648223876953125,
+              "rc": 0
+            },
+            "apply": {
+              "wall": 129.467072499996,
+              "peak_gb": 1.2479705810546875
+            }
+          }
+        }
+      },
+      "agreement": {
+        "corr": 0.9961670326653376
+      },
+      "carried": [
+        "1/warpkit",
+        "10/warpkit"
+      ]
+    },
+    "echo3": {
+      "echoes": 3,
+      "frames": 138,
+      "runs": {
+        "1": {
+          "niimath": {
+            "estimate": {
+              "wall": 9.958702125004493,
+              "peak_gb": 1.65509033203125,
+              "rc": 0
+            },
+            "apply": {
+              "wall": 9.570879291000892,
+              "peak_gb": 0.48095703125
+            }
+          },
+          "warpkit": {
+            "estimate": {
+              "wall": 46.101332541999,
+              "peak_gb": 3.2028656005859375,
+              "rc": 0
+            },
+            "apply": {
+              "wall": 957.9784197499976,
+              "peak_gb": 1.1108551025390625
+            }
+          }
+        },
+        "10": {
+          "niimath": {
+            "estimate": {
+              "wall": 2.884211625001626,
+              "peak_gb": 1.8323974609375,
+              "rc": 0
+            },
+            "apply": {
+              "wall": 1.8619646669903887,
+              "peak_gb": 0.48126220703125
+            }
+          },
+          "warpkit": {
+            "estimate": {
+              "wall": 12.818276250000054,
+              "peak_gb": 3.829315185546875,
+              "rc": 0
+            },
+            "apply": {
+              "wall": 159.3315094999998,
+              "peak_gb": 1.12823486328125
+            }
+          }
+        }
+      },
+      "agreement": {
+        "corr": 0.9962783094708201
+      },
+      "carried": [
+        "1/warpkit",
+        "10/warpkit"
+      ]
+    }
+  }
+}

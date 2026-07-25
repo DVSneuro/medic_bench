@@ -1,0 +1,14 @@
+{
+  "PhysioType": "generic",
+  "Columns": [
+    "cardiac",
+    "trigger",
+    "cardiac_trigger"
+  ],
+  "SamplingFrequency": 200,
+  "StartTime": -20.565,
+  "cardiac_trigger": {
+    "Description": "Firmware-detected physiological event peak (e.g. cardiac R-wave or respiratory peak): 1 at a sample the scanner flagged as a detected peak, 0 otherwise. Independent of the scanner-volume `trigger` column."
+  },
+  "TaskName": "rest"
+}

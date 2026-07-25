@@ -1,0 +1,4 @@
+# Benchmark artefacts: several GB of intermediate and corrected images.
+bench_out/
+__pycache__/
+.DS_Store
