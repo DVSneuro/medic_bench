@@ -2,3 +2,8 @@
 bench_out/
 __pycache__/
 .DS_Store
+
+# Generated validation corpora (regenerate with test/romeo_oracle.sh and the
+# scripts in test/medic_experiments/); hundreds of MB, never committed.
+test/romeo_ref/
+test/medic_ref/
