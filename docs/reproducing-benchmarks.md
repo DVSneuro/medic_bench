@@ -3,6 +3,71 @@
 This workflow uses only public repositories and one complete public OpenNeuro
 run. It does not require an OpenNeuro account, API key, or private data.
 
+## Linux1 quick start
+
+Clone the benchmark branch, then detach at the exact harness commit used for
+the Mac measurements:
+
+```bash
+git clone --branch benchmark-macos-linux-openneuro --single-branch \
+  https://github.com/DVSneuro/medic_bench.git
+cd medic_bench
+git checkout --detach 5036d63cefa92d17b80325693a646865a9e7700b
+```
+
+The later commits on the branch contain the recorded Mac result and reporting
+improvements only. Using the commit above keeps the measured Python harness
+identical on both hosts. The raw JSON records the OS, CPU, memory, compiler,
+tool versions, thread counts, and source commits for auditability.
+
+After satisfying the prerequisites below, create the Python 3.12 environment,
+build pinned niimath, and fetch the public OpenNeuro subset:
+
+```bash
+python3.12 -m venv .benchmark-tools/warpkit-1.4.1
+.benchmark-tools/warpkit-1.4.1/bin/python -m pip install \
+  -r requirements-benchmark-lock.txt
+python3 scripts/build_niimath.py
+
+export PATH="$PWD/.benchmark-tools/warpkit-1.4.1/bin:$PATH"
+export NIIMATH="$PWD/.benchmark-tools/niimath-9dda863702e6/bin/niimath"
+
+python3 scripts/fetch_openneuro_sample.py
+python3 scripts/fetch_openneuro_sample.py --verify-only
+```
+
+Run the validation and benchmark with the pinned Python interpreter:
+
+```bash
+.benchmark-tools/warpkit-1.4.1/bin/python bench.py \
+  --dry-run \
+  --datasets echo2 echo3 openneuro-ds005123 \
+  --niimath "$NIIMATH"
+
+.benchmark-tools/warpkit-1.4.1/bin/python bench.py \
+  --datasets echo2 echo3 openneuro-ds005123 \
+  --machine-label linux1 \
+  --niimath "$NIIMATH" \
+  --out-dir bench_out/linux1 \
+  --json results/linux1.json \
+  --markdown results/linux1.md
+```
+
+The run measures one thread and the platform default (logical CPU count,
+capped at 16). It takes several hours. Keep `results/linux1.json` and
+`results/linux1.md`; do not copy or commit `bench_out/`, the OpenNeuro cache,
+the environment, or compiled binaries.
+
+To combine the Linux result with the committed Mac result, return to the
+branch tip and render the comparison:
+
+```bash
+git switch benchmark-macos-linux-openneuro
+python3 scripts/render_results.py \
+  results/macbook-air.json results/linux1.json \
+  --output results/comparison.md
+```
+
 ## Immutable inputs
 
 The authoritative pins are in
