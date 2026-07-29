@@ -1,0 +1,15 @@
+# Cross-platform lock used for the 2026-07-29 benchmark environment (Python 3.12).
+ImageIO==2.37.4
+indexed_gzip==1.10.3
+lazy-loader==0.5
+networkx==3.6.1
+nibabel==5.4.2
+numpy==2.5.1
+packaging==26.2
+pillow==12.3.0
+scikit-image==0.26.0
+scipy==1.18.0
+tifffile==2026.7.14
+transforms3d==0.4.2
+typing_extensions==4.16.0
+warpkit==1.4.1

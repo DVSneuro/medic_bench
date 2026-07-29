@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "key": "openneuro-ds005123",
+  "description": "One complete four-echo UGR run from OpenNeuro ds005123",
+  "repository": "https://github.com/OpenNeuroDatasets/ds005123.git",
+  "accession": "ds005123",
+  "snapshot": "1.1.3",
+  "resolved_commit": "a3213b56b7bd27d7e3ac10577558eb26bb7c2a61",
+  "cache_relative": "ds005123/1.1.3",
+  "func_dir": "sub-10317/func",
+  "run_stem": "sub-10317_task-ugr_run-1",
+  "subject": "sub-10317",
+  "session": null,
+  "task": "ugr",
+  "run": "1",
+  "echoes": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "parts": [
+    "mag",
+    "phase"
+  ],
+  "suffix": "bold"
+}

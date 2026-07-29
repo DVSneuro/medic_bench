@@ -24,6 +24,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from typing import List, Optional, Tuple
 
 # sub-XX[_ses-Y]..._echo-<N>_part-{mag,phase}_bold.nii[.gz|.zst]
 ENTITY_RE = re.compile(
@@ -115,7 +116,7 @@ def candidates(base: Path) -> list[Path]:
     return [p for p in (Path(str(base) + e) for e in EXTS) if p.is_file()]
 
 
-def resolve_outputs(prefix: Path) -> tuple[dict, str | None]:
+def resolve_outputs(prefix: Path) -> Tuple[dict, Optional[str]]:
     """Map each --medic output suffix to the one file that IS it, or return an error.
 
     Never picks among extensions by priority: a leftover `.nii.gz` beside a fresh `.nii` is two
@@ -152,7 +153,7 @@ def shlex_quote(s: str) -> str:
     return "'" + s.replace("'", "'\\''") + "'"
 
 
-def main(argv: list[str] | None = None) -> int:
+def main(argv: Optional[List[str]] = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("input", type=Path, help="a BIDS func/ directory or a dataset root")
     ap.add_argument("--out-dir", type=Path, required=True, help="output directory")

@@ -34,6 +34,13 @@ python3 bench.py --niimath /path/to/niimath
 
 Results are written to `bench_results.json` and printed as the tables below; `--update-readme` writes them straight into this file. Intermediate and output images go to `bench_out/` (several GB — delete it when you are done).
 
+For a pinned cross-platform run, including the manifest-backed four-echo
+OpenNeuro `ds005123` sample, selective DataLad/git-annex retrieval, rich machine
+provenance, repeat-ready JSON, and comparison reports, see
+[`docs/reproducing-benchmarks.md`](docs/reproducing-benchmarks.md). The built-in
+`echo2` and `echo3` datasets remain the default, so existing commands continue
+to work.
+
 **Budget about 75 minutes for the full matrix on a modern workstation, and note that almost all of it is one arm.** `wk-apply-warp` has no thread option, so pinning it to a single thread (required for a single-threaded row) takes it to roughly 15 minutes per echo. The other seven arms together finish in a few minutes. If you only want the multi-threaded comparison, `python3 bench.py --threads 8` runs in well under ten minutes.
 
 Three choices make the comparison like-for-like:
