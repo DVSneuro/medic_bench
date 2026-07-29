@@ -259,13 +259,45 @@ def comparison_report(payloads: List[Dict]) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def unavailable_comparison(payload: Dict, label: str, reason: str) -> str:
+    complete = render_payload(payload).replace(
+        "# MEDIC benchmark —", "## Available result —", 1
+    ).rstrip()
+    return (
+        "# MEDIC cross-platform benchmark\n\n"
+        "The available host result is reported in full below. A numerical cross-system "
+        "comparison is not possible because the second host could not be reached; no values "
+        "have been inferred or substituted.\n\n"
+        + complete
+        + "\n\n## %s\n\nStatus: **unavailable**.\n\n%s\n\n"
+        "## Direct cross-system comparison\n\n"
+        "Not produced. Machine specifications, stage timings, peak RSS, speedups, and "
+        "agreement for `%s` remain unavailable until that host can be reached and the same "
+        "committed benchmark is run.\n" % (label, reason, label)
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("json", nargs="+", type=Path)
     parser.add_argument("--output", type=Path)
+    parser.add_argument(
+        "--unavailable-machine",
+        help="with one JSON, render an explicitly incomplete comparison for this host label",
+    )
+    parser.add_argument("--unavailable-reason")
     args = parser.parse_args()
     payloads = [load_result(path) for path in args.json]
-    markdown = comparison_report(payloads)
+    if args.unavailable_machine:
+        if len(payloads) != 1:
+            parser.error("--unavailable-machine requires exactly one result JSON")
+        if not args.unavailable_reason:
+            parser.error("--unavailable-machine also requires --unavailable-reason")
+        markdown = unavailable_comparison(
+            payloads[0], args.unavailable_machine, args.unavailable_reason
+        )
+    else:
+        markdown = comparison_report(payloads)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(markdown)

@@ -899,7 +899,7 @@ def python_info() -> Dict:
     return {
         "version": platform.python_version(),
         "implementation": platform.python_implementation(),
-        "executable": str(Path(sys.executable).resolve()),
+        "executable": sys.executable,
     }
 
 
@@ -989,9 +989,10 @@ def tables(results: Dict, threads: List[int]) -> str:
             )
             agreement_result = result.get("agreement", {}).get(str(thread), {})
             corr = agreement_result.get("corr")
+            corr_text = "n/a" if corr is None else "%.6f" % float(corr)
             lines.append(
                 "| %d | %s | %s | **%s** | %s |"
-                % (thread, fmt(w_total, "s"), fmt(n_total, "s"), speed, fmt(corr))
+                % (thread, fmt(w_total, "s"), fmt(n_total, "s"), speed, corr_text)
             )
         failures = result.get("failures", [])
         if failures:
@@ -1013,12 +1014,15 @@ def human_bytes(value) -> str:
 
 
 def machine_markdown(machine: Dict) -> str:
+    manufacturer = str(machine.get("cpu_manufacturer", "unavailable"))
+    model = str(machine.get("cpu_model", "unavailable"))
+    cpu = model if model.lower().startswith(manufacturer.lower()) else manufacturer + " " + model
     rows = [
         ("Label", machine.get("label")),
         ("Operating system", "%s %s" % (machine.get("operating_system"), machine.get("os_version"))),
         ("Kernel", machine.get("kernel_version")),
         ("Architecture", machine.get("architecture")),
-        ("CPU", "%s %s" % (machine.get("cpu_manufacturer"), machine.get("cpu_model"))),
+        ("CPU", cpu),
         ("Physical cores", machine.get("physical_cores")),
         ("Logical CPUs", machine.get("logical_cpus")),
         ("Performance cores", machine.get("performance_cores")),
@@ -1060,8 +1064,11 @@ def software_markdown(payload: Dict) -> str:
             % (bench.get("commit", "unavailable"), " (dirty)" if bench.get("dirty") else ""),
         ),
     ]
+    def markdown_cell(value) -> str:
+        return str(value).replace("|", "\\|").replace("\n", "<br>")
+
     lines = ["| software | version / path |", "| --- | --- |"]
-    lines.extend("| %s | %s |" % row for row in rows)
+    lines.extend("| %s | %s |" % (markdown_cell(name), markdown_cell(value)) for name, value in rows)
     return "\n".join(lines)
 
 
@@ -1372,7 +1379,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         "software": software,
         "threads": threads,
         "thread_environment_variables": list(THREAD_ENV),
-        "benchmark_command": [str(Path(sys.executable).resolve())] + sys.argv,
+        "benchmark_command": [sys.executable] + sys.argv,
         "mask_policy": "built-in for both" if args.no_mask else "dataset-specific",
         "repetitions": args.repetitions,
         "notes": notes,

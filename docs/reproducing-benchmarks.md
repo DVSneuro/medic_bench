@@ -179,6 +179,16 @@ python3 scripts/render_results.py \
   --output results/comparison.md
 ```
 
+If a host is unreachable, produce an explicit partial comparison instead of
+inventing a placeholder benchmark:
+
+```bash
+python3 scripts/render_results.py results/macbook-air.json \
+  --unavailable-machine linux1 \
+  --unavailable-reason "The configured SSH alias did not resolve." \
+  --output results/comparison.md
+```
+
 The report presents estimate, apply, and end-to-end cost separately. Timing
 and peak RSS describe computational efficiency; corrected-image correlation
 describes agreement and is not, by itself, evidence of numerical equivalence.
