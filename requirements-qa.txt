@@ -1,0 +1,7 @@
+# Start from the same Python/NIfTI stack used by the pinned benchmark.
+-r requirements-benchmark-lock.txt
+
+# Interactive field-map inspection in Jupyter.
+ipyniivue==2.4.4
+ipywidgets>=8.1,<9
+jupyterlab>=4.4,<5

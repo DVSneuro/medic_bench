@@ -61,6 +61,46 @@ Three choices make the comparison like-for-like:
 
 Peak RSS comes from `getrusage(RUSAGE_CHILDREN)` inside a one-shot wrapper process, so every figure belongs to exactly one command.
 
+## Field-map QA and visualization
+
+[`notebooks/fieldmap_qa.ipynb`](notebooks/fieldmap_qa.ipynb) discovers the
+generated `fmap_fieldmaps.nii`, `fmap_fieldmaps_native.nii`, and
+`fmap_displacementmaps.nii` files beneath `bench_out/`. It provides:
+
+- interactive multiplanar and 4D frame inspection with
+  [ipyniivue](https://github.com/niivue/ipyniivue);
+- sampled finite-value, zero-fraction, robust-range, orientation, affine, and
+  qform/sform checks; and
+- geometry, correlation, and difference summaries for matched Warpkit and
+  niimath maps.
+
+Create a separate QA environment and open the notebook from the repository
+root:
+
+```bash
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements-qa.txt
+.venv/bin/python -m jupyter lab notebooks/fieldmap_qa.ipynb
+```
+
+By default the notebook searches `bench_out/` in the checkout. If the outputs
+are elsewhere, set `MEDIC_BENCH_OUTPUT_ROOT=/path/to/bench_out` before
+launching Jupyter.
+
+The same sampled checks are available without Jupyter:
+
+```bash
+.venv/bin/python scripts/fieldmap_qa.py \
+  --root bench_out \
+  --dataset openneuro-ds005123 \
+  --kind fieldmaps \
+  --json results/fieldmap-qa.json
+```
+
+The automated checks screen for common output failures; they do not impose a
+universal physiologic field-map range. Visual review of the complete time
+series remains the important final step.
+
 ## The datasets
 
 The two repository datasets are single-subject resting-state runs. The pinned
@@ -164,6 +204,8 @@ So: use this repository for a fair comparison of time and memory, and treat nume
 | --- | --- |
 | `bench.py` | the benchmark driver — checks the tools, runs both implementations, writes the tables |
 | `medic.py` | a small stdlib-only BIDS front end for `niimath --medic`: discovers echo/part pairs, reads the sidecars, and calls niimath once per run to estimate and once per echo to apply. Useful on its own, and it documents the intended workflow |
+| `scripts/fieldmap_qa.py` | discovers generated maps, samples structural/value QA metrics, and compares matched Warpkit and niimath outputs |
+| `notebooks/fieldmap_qa.ipynb` | interactive ipyniivue field-map and displacement-map inspection |
 | `echo2/`, `echo3/` | the two BIDS datasets |
 | `echo2bet.nii.gz`, `echo3bet.nii.gz` | MindGrab brain masks |
 

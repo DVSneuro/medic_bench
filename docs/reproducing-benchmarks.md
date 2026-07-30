@@ -5,18 +5,17 @@ run. It does not require an OpenNeuro account, API key, or private data.
 
 ## Linux1 quick start
 
-Clone the benchmark branch, then detach at the exact harness commit used for
-the Mac measurements:
+Clone `main`, then detach at the exact harness commit used for the Mac and
+Linux measurements:
 
 ```bash
-git clone --branch benchmark-macos-linux-openneuro --single-branch \
-  https://github.com/DVSneuro/medic_bench.git
+git clone https://github.com/DVSneuro/medic_bench.git
 cd medic_bench
 git checkout --detach 5036d63cefa92d17b80325693a646865a9e7700b
 ```
 
-The later commits on the branch contain the recorded Mac result and reporting
-improvements only. Using the commit above keeps the measured Python harness
+The later commits on `main` contain recorded results, reporting improvements,
+and QA tooling only. Using the commit above keeps the measured Python harness
 identical on both hosts. The raw JSON records the OS, CPU, memory, compiler,
 tool versions, thread counts, and source commits for auditability.
 
@@ -58,11 +57,11 @@ capped at 16). It takes several hours. Keep `results/linux1.json` and
 `results/linux1.md`; do not copy or commit `bench_out/`, the OpenNeuro cache,
 the environment, or compiled binaries.
 
-To combine the Linux result with the committed Mac result, return to the
-branch tip and render the comparison:
+To combine the Linux result with the committed Mac result, return to `main`
+and render the comparison:
 
 ```bash
-git switch benchmark-macos-linux-openneuro
+git switch main
 python3 scripts/render_results.py \
   results/macbook-air.json results/linux1.json \
   --output results/comparison.md
@@ -221,6 +220,33 @@ result.
 The supplied masks continue to be passed only to niimath for `echo2` and
 `echo3`, because warpkit has no mask option. No corresponding mask is supplied
 for the OpenNeuro run, so both implementations use their internal masks there.
+
+## Inspect generated field maps
+
+After a benchmark run, install the optional QA dependencies and launch the
+interactive notebook:
+
+```bash
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements-qa.txt
+.venv/bin/python -m jupyter lab notebooks/fieldmap_qa.ipynb
+```
+
+The notebook discovers generated maps beneath `bench_out/`, reports sampled
+structural and value checks, compares matching Warpkit and niimath outputs,
+and lets ipyniivue load any full-resolution frame on demand. Set
+`MEDIC_BENCH_OUTPUT_ROOT=/path/to/bench_out` before launching if the outputs
+are stored outside the checkout.
+
+For headless QA:
+
+```bash
+.venv/bin/python scripts/fieldmap_qa.py \
+  --root bench_out \
+  --dataset openneuro-ds005123 \
+  --kind fieldmaps \
+  --json results/fieldmap-qa.json
+```
 
 ## Linux transfer and comparison
 
