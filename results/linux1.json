@@ -1,0 +1,2067 @@
+{
+  "schema_version": 2,
+  "status": "complete",
+  "started_at": "2026-07-29T14:17:51.521140-04:00",
+  "completed_at": "2026-07-29T21:27:17.607854-04:00",
+  "machine": {
+    "label": "linux1",
+    "hostname": "CLA18994.tu.temple.edu",
+    "operating_system": "Linux",
+    "os_version": "Ubuntu 24.04.4 LTS",
+    "kernel_version": "6.17.0-23-generic",
+    "architecture": "x86_64",
+    "cpu_manufacturer": "GenuineIntel",
+    "cpu_model": "Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz",
+    "physical_cores": 24,
+    "logical_cpus": 48,
+    "performance_cores": "unavailable",
+    "efficiency_cores": "unavailable",
+    "total_ram_bytes": 134848909312
+  },
+  "software": {
+    "warpkit": {
+      "version": "1.4.1",
+      "executables": {
+        "wk-medic": "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-medic",
+        "wk-apply-warp": "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp"
+      },
+      "reported_versions": {
+        "wk-medic": "wk-medic 1.4.1",
+        "wk-apply-warp": "wk-apply-warp 1.4.1"
+      },
+      "environment": {
+        "version": "1.4.1",
+        "python_executable": "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/python",
+        "python_version": "Python 3.12.3",
+        "packages": [
+          "ImageIO==2.37.4",
+          "indexed_gzip==1.10.3",
+          "lazy-loader==0.5",
+          "networkx==3.6.1",
+          "nibabel==5.4.2",
+          "numpy==2.5.1",
+          "packaging==26.2",
+          "pillow==12.3.0",
+          "scikit-image==0.26.0",
+          "scipy==1.18.0",
+          "tifffile==2026.7.14",
+          "transforms3d==0.4.2",
+          "typing_extensions==4.16.0",
+          "warpkit==1.4.1"
+        ]
+      }
+    },
+    "niimath": {
+      "version": "v1.0.20260726 OpenMP GCC13.3.0 BSD (64-bit Linux)",
+      "executable": "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+      "source_commit": "9dda863702e64078ab11061df65e6824251c293f",
+      "compiler": {
+        "path": "/usr/bin/cc",
+        "version": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+      },
+      "openmp": {
+        "runtime": "compiler default (normally libgomp for GCC or libomp for Clang)",
+        "version": "discover from linked_libraries",
+        "compile_flags": "-fopenmp",
+        "link_flags": "-fopenmp",
+        "linked_libraries": "linux-vdso.so.1 (0x00007b5bab07e000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007b5baae67000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007b5baae4b000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x00007b5baad91000)\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x00007b5baad3b000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007b5baaa00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007b5bab080000)"
+      },
+      "build": {
+        "schema_version": 1,
+        "built_at": "2026-07-29T14:16:35.798482-04:00",
+        "source_repository": "https://github.com/rordenlab/niimath.git",
+        "source_commit": "9dda863702e64078ab11061df65e6824251c293f",
+        "source_dir": "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/src",
+        "binary": "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+        "niimath_version": "v1.0.20260726 OpenMP GCC13.3.0 BSD (64-bit Linux)",
+        "compiler": {
+          "path": "/usr/bin/cc",
+          "version": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+        },
+        "openmp": {
+          "runtime": "compiler default (normally libgomp for GCC or libomp for Clang)",
+          "version": "discover from linked_libraries",
+          "compile_flags": "-fopenmp",
+          "link_flags": "-fopenmp",
+          "linked_libraries": "linux-vdso.so.1 (0x00007b5bab07e000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007b5baae67000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007b5baae4b000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x00007b5baad91000)\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x00007b5baad3b000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007b5baaa00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007b5bab080000)"
+        },
+        "build_command": [
+          "make",
+          "-B",
+          "-C",
+          "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/src/src",
+          "-j8",
+          "CNAME=/usr/bin/cc"
+        ],
+        "platform": {
+          "system": "Linux",
+          "release": "6.17.0-23-generic",
+          "architecture": "x86_64"
+        }
+      }
+    },
+    "python": {
+      "version": "3.12.3",
+      "implementation": "CPython",
+      "executable": "/usr/bin/python3.12"
+    },
+    "medic_bench": {
+      "commit": "5036d63cefa92d17b80325693a646865a9e7700b",
+      "branch": "detached",
+      "dirty": false
+    }
+  },
+  "threads": [
+    1,
+    16
+  ],
+  "thread_environment_variables": [
+    "OMP_NUM_THREADS",
+    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS",
+    "MKL_NUM_THREADS",
+    "OPENBLAS_NUM_THREADS",
+    "NUMEXPR_NUM_THREADS",
+    "VECLIB_MAXIMUM_THREADS"
+  ],
+  "benchmark_command": [
+    "/usr/bin/python3.12",
+    "bench.py",
+    "--datasets",
+    "echo2",
+    "echo3",
+    "openneuro-ds005123",
+    "--machine-label",
+    "linux1",
+    "--niimath",
+    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+    "--out-dir",
+    "bench_out/linux1",
+    "--json",
+    "results/linux1.json",
+    "--markdown",
+    "results/linux1.md"
+  ],
+  "mask_policy": "dataset-specific",
+  "repetitions": 1,
+  "notes": [
+    "No external mask exists for the OpenNeuro run; both tools used internal masks."
+  ],
+  "failures": [],
+  "results": {
+    "echo2": {
+      "dataset": {
+        "key": "echo2",
+        "accession": "bundled",
+        "snapshot": "medic_bench repository content",
+        "resolved_commit": "5036d63cefa92d17b80325693a646865a9e7700b",
+        "subject": "sub-crlab",
+        "session": null,
+        "task": "rest",
+        "run": "02",
+        "echo_count": 2,
+        "echoes": [
+          1,
+          2
+        ],
+        "frame_count": 170,
+        "image_dimensions": [
+          76,
+          76,
+          46
+        ],
+        "voxel_size_mm": [
+          2.8026299476623535,
+          2.8026299476623535,
+          2.799999952316284
+        ],
+        "echo_times_ms": [
+          16.8,
+          38.559999999999995
+        ],
+        "total_readout_time_seconds": 0.02025,
+        "phase_encoding_direction": "j"
+      },
+      "mask": "supplied to niimath only",
+      "runs": {
+        "1": {
+          "warpkit": {
+            "measurements": [
+              {
+                "status": "complete",
+                "started_at": "2026-07-29T14:17:54.745579-04:00",
+                "estimate": {
+                  "wall": 216.33777073398232,
+                  "peak_gb": 2.475006103515625,
+                  "rc": 0,
+                  "command": [
+                    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-medic",
+                    "--magnitude",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-mag_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-mag_bold.nii.gz",
+                    "--phase",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-phase_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-phase_bold.nii.gz",
+                    "--metadata",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-phase_bold.json",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-phase_bold.json",
+                    "--out-prefix",
+                    "bench_out/linux1/echo2/warpkit/1/fmap",
+                    "-n",
+                    "1"
+                  ],
+                  "environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "FSLOUTPUTTYPE": "NIFTI"
+                  },
+                  "stdout_tail": " 96\n[2026-07-29 14:21:05,219] INFO: Processing frame: 97\n[2026-07-29 14:21:05,461] INFO: Processing frame: 98\n[2026-07-29 14:21:05,701] INFO: Processing frame: 99\n[2026-07-29 14:21:05,941] INFO: Processing frame: 100\n[2026-07-29 14:21:06,180] INFO: Processing frame: 101\n[2026-07-29 14:21:06,420] INFO: Processing frame: 102\n[2026-07-29 14:21:06,666] INFO: Processing frame: 103\n[2026-07-29 14:21:06,906] INFO: Processing frame: 104\n[2026-07-29 14:21:07,146] INFO: Processing frame: 105\n[2026-07-29 14:21:07,385] INFO: Processing frame: 106\n[2026-07-29 14:21:07,627] INFO: Processing frame: 107\n[2026-07-29 14:21:07,867] INFO: Processing frame: 108\n[2026-07-29 14:21:08,106] INFO: Processing frame: 109\n[2026-07-29 14:21:08,349] INFO: Processing frame: 110\n[2026-07-29 14:21:08,589] INFO: Processing frame: 111\n[2026-07-29 14:21:08,829] INFO: Processing frame: 112\n[2026-07-29 14:21:09,067] INFO: Processing frame: 113\n[2026-07-29 14:21:09,307] INFO: Processing frame: 114\n[2026-07-29 14:21:09,546] INFO: Processing frame: 115\n[2026-07-29 14:21:09,798] INFO: Processing frame: 116\n[2026-07-29 14:21:10,051] INFO: Processing frame: 117\n[2026-07-29 14:21:10,292] INFO: Processing frame: 118\n[2026-07-29 14:21:10,538] INFO: Processing frame: 119\n[2026-07-29 14:21:10,778] INFO: Processing frame: 120\n[2026-07-29 14:21:11,015] INFO: Processing frame: 121\n[2026-07-29 14:21:11,252] INFO: Processing frame: 122\n[2026-07-29 14:21:11,492] INFO: Processing frame: 123\n[2026-07-29 14:21:11,729] INFO: Processing frame: 124\n[2026-07-29 14:21:11,974] INFO: Processing frame: 125\n[2026-07-29 14:21:12,221] INFO: Processing frame: 126\n[2026-07-29 14:21:12,464] INFO: Processing frame: 127\n[2026-07-29 14:21:12,709] INFO: Processing frame: 128\n[2026-07-29 14:21:12,946] INFO: Processing frame: 129\n[2026-07-29 14:21:13,185] INFO: Processing frame: 130\n[2026-07-29 14:21:13,428] INFO: Processing frame: 131\n[2026-07-29 14:21:13,666] INFO: Processing frame: 132\n[2026-07-29 14:21:13,906] INFO: Processing frame: 133\n[2026-07-29 14:21:14,143] INFO: Processing frame: 134\n[2026-07-29 14:21:14,382] INFO: Processing frame: 135\n[2026-07-29 14:21:14,631] INFO: Processing frame: 136\n[2026-07-29 14:21:14,873] INFO: Processing frame: 137\n[2026-07-29 14:21:15,111] INFO: Processing frame: 138\n[2026-07-29 14:21:15,350] INFO: Processing frame: 139\n[2026-07-29 14:21:15,589] INFO: Processing frame: 140\n[2026-07-29 14:21:15,828] INFO: Processing frame: 141\n[2026-07-29 14:21:16,070] INFO: Processing frame: 142\n[2026-07-29 14:21:16,309] INFO: Processing frame: 143\n[2026-07-29 14:21:16,548] INFO: Processing frame: 144\n[2026-07-29 14:21:16,791] INFO: Processing frame: 145\n[2026-07-29 14:21:17,032] INFO: Processing frame: 146\n[2026-07-29 14:21:17,274] INFO: Processing frame: 147\n[2026-07-29 14:21:17,516] INFO: Processing frame: 148\n[2026-07-29 14:21:17,755] INFO: Processing frame: 149\n[2026-07-29 14:21:17,994] INFO: Processing frame: 150\n[2026-07-29 14:21:18,237] INFO: Processing frame: 151\n[2026-07-29 14:21:18,477] INFO: Processing frame: 152\n[2026-07-29 14:21:18,716] INFO: Processing frame: 153\n[2026-07-29 14:21:18,954] INFO: Processing frame: 154\n[2026-07-29 14:21:19,195] INFO: Processing frame: 155\n[2026-07-29 14:21:19,434] INFO: Processing frame: 156\n[2026-07-29 14:21:19,675] INFO: Processing frame: 157\n[2026-07-29 14:21:19,917] INFO: Processing frame: 158\n[2026-07-29 14:21:20,155] INFO: Processing frame: 159\n[2026-07-29 14:21:20,394] INFO: Processing frame: 160\n[2026-07-29 14:21:20,633] INFO: Processing frame: 161\n[2026-07-29 14:21:20,879] INFO: Processing frame: 162\n[2026-07-29 14:21:21,118] INFO: Processing frame: 163\n[2026-07-29 14:21:21,360] INFO: Processing frame: 164\n[2026-07-29 14:21:21,599] INFO: Processing frame: 165\n[2026-07-29 14:21:21,840] INFO: Processing frame: 166\n[2026-07-29 14:21:22,082] INFO: Processing frame: 167\n[2026-07-29 14:21:22,324] INFO: Processing frame: 168\n[2026-07-29 14:21:22,561] INFO: Processing frame: 169\nSaving field maps and displacement maps to file...\nDone.\n"
+                },
+                "apply": {
+                  "status": "complete",
+                  "wall": 2614.9460454452783,
+                  "peak_gb": 1.1263504028320312,
+                  "completed_echoes": 2,
+                  "commands": [
+                    {
+                      "wall": 1308.0227783014998,
+                      "peak_gb": 1.1258583068847656,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/echo2/warpkit/1/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/echo2/warpkit/1/undistorted_echo-1.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/echo2/warpkit/1/fmap_displacementmaps.nii'], output='bench_out/linux1/echo2/warpkit/1/undistorted_echo-1.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 170; transform frames: 170 (type=map)\n  resampled frame 10/170\n  resampled frame 20/170\n  resampled frame 30/170\n  resampled frame 40/170\n  resampled frame 50/170\n  resampled frame 60/170\n  resampled frame 70/170\n  resampled frame 80/170\n  resampled frame 90/170\n  resampled frame 100/170\n  resampled frame 110/170\n  resampled frame 120/170\n  resampled frame 130/170\n  resampled frame 140/170\n  resampled frame 150/170\n  resampled frame 160/170\n  resampled frame 170/170\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/echo2/warpkit/1/undistorted_echo-1.nii...\nDone.\n"
+                    },
+                    {
+                      "wall": 1306.9232671437785,
+                      "peak_gb": 1.1263504028320312,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/echo2/warpkit/1/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/echo2/warpkit/1/undistorted_echo-2.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/echo2/warpkit/1/fmap_displacementmaps.nii'], output='bench_out/linux1/echo2/warpkit/1/undistorted_echo-2.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 170; transform frames: 170 (type=map)\n  resampled frame 10/170\n  resampled frame 20/170\n  resampled frame 30/170\n  resampled frame 40/170\n  resampled frame 50/170\n  resampled frame 60/170\n  resampled frame 70/170\n  resampled frame 80/170\n  resampled frame 90/170\n  resampled frame 100/170\n  resampled frame 110/170\n  resampled frame 120/170\n  resampled frame 130/170\n  resampled frame 140/170\n  resampled frame 150/170\n  resampled frame 160/170\n  resampled frame 170/170\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/echo2/warpkit/1/undistorted_echo-2.nii...\nDone.\n"
+                    }
+                  ]
+                },
+                "completed_at": "2026-07-29T15:05:06.159762-04:00"
+              }
+            ]
+          },
+          "niimath": {
+            "measurements": [
+              {
+                "status": "complete",
+                "started_at": "2026-07-29T15:05:06.160832-04:00",
+                "estimate": {
+                  "wall": 56.64604050852358,
+                  "peak_gb": 1.2275505065917969,
+                  "rc": 0,
+                  "command": [
+                    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                    "--medic",
+                    "--magnitude",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-mag_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-mag_bold.nii.gz",
+                    "--phase",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-phase_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-phase_bold.nii.gz",
+                    "--te-ms",
+                    "16.8,38.56",
+                    "--total-readout-time",
+                    "0.02025",
+                    "--phase-encoding-direction",
+                    "j",
+                    "--n-cpus",
+                    "1",
+                    "--gz",
+                    "0",
+                    "--out-prefix",
+                    "bench_out/linux1/echo2/niimath/1/fmap",
+                    "--mask",
+                    "/ZPOOL/data/projects/medic_bench/echo2bet.nii.gz"
+                  ],
+                  "environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "FSLOUTPUTTYPE": "NIFTI"
+                  },
+                  "stderr_tail": "--medic: 76x76x46, 2 echo(es), 170 frame(s); working set ~1.18 GiB\n--medic: displacement inversion: 168830 voxel(s) (0.374%) still moving by >0.001 Hz after 64 iterations; 30122 folded adjacent pair(s) (0.067% of voxels) mark columns where the forward map is not monotone, so the inverse is multi-valued and the branch chosen is arbitrary\n"
+                },
+                "apply": {
+                  "status": "complete",
+                  "wall": 40.452274065464735,
+                  "peak_gb": 0.5070152282714844,
+                  "completed_echoes": 2,
+                  "commands": [
+                    {
+                      "wall": 20.346212903037667,
+                      "peak_gb": 0.5069847106933594,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-mag_bold.nii.gz",
+                        "-p",
+                        "1",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/echo2/niimath/1/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/echo2/niimath/1/undistorted_echo-1.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 1 threads\n"
+                    },
+                    {
+                      "wall": 20.106061162427068,
+                      "peak_gb": 0.5070152282714844,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-mag_bold.nii.gz",
+                        "-p",
+                        "1",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/echo2/niimath/1/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/echo2/niimath/1/undistorted_echo-2.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 1 threads\n"
+                    }
+                  ]
+                },
+                "completed_at": "2026-07-29T15:06:43.386426-04:00"
+              }
+            ]
+          }
+        },
+        "16": {
+          "warpkit": {
+            "measurements": [
+              {
+                "status": "complete",
+                "started_at": "2026-07-29T15:06:43.387212-04:00",
+                "estimate": {
+                  "wall": 98.47847875580192,
+                  "peak_gb": 2.7251815795898438,
+                  "rc": 0,
+                  "command": [
+                    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-medic",
+                    "--magnitude",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-mag_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-mag_bold.nii.gz",
+                    "--phase",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-phase_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-phase_bold.nii.gz",
+                    "--metadata",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-phase_bold.json",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-phase_bold.json",
+                    "--out-prefix",
+                    "bench_out/linux1/echo2/warpkit/16/fmap",
+                    "-n",
+                    "16"
+                  ],
+                  "environment": {
+                    "OMP_NUM_THREADS": "16",
+                    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                    "MKL_NUM_THREADS": "16",
+                    "OPENBLAS_NUM_THREADS": "16",
+                    "NUMEXPR_NUM_THREADS": "16",
+                    "VECLIB_MAXIMUM_THREADS": "16",
+                    "FSLOUTPUTTYPE": "NIFTI"
+                  },
+                  "stdout_tail": " 96\n[2026-07-29 15:08:12,282] INFO: Processing frame: 97\n[2026-07-29 15:08:12,340] INFO: Processing frame: 98\n[2026-07-29 15:08:12,398] INFO: Processing frame: 99\n[2026-07-29 15:08:12,453] INFO: Processing frame: 100\n[2026-07-29 15:08:12,511] INFO: Processing frame: 101\n[2026-07-29 15:08:12,568] INFO: Processing frame: 102\n[2026-07-29 15:08:12,627] INFO: Processing frame: 103\n[2026-07-29 15:08:12,684] INFO: Processing frame: 104\n[2026-07-29 15:08:12,741] INFO: Processing frame: 105\n[2026-07-29 15:08:12,798] INFO: Processing frame: 106\n[2026-07-29 15:08:12,856] INFO: Processing frame: 107\n[2026-07-29 15:08:12,913] INFO: Processing frame: 108\n[2026-07-29 15:08:12,972] INFO: Processing frame: 109\n[2026-07-29 15:08:13,030] INFO: Processing frame: 110\n[2026-07-29 15:08:13,087] INFO: Processing frame: 111\n[2026-07-29 15:08:13,143] INFO: Processing frame: 112\n[2026-07-29 15:08:13,201] INFO: Processing frame: 113\n[2026-07-29 15:08:13,259] INFO: Processing frame: 114\n[2026-07-29 15:08:13,315] INFO: Processing frame: 115\n[2026-07-29 15:08:13,372] INFO: Processing frame: 116\n[2026-07-29 15:08:13,429] INFO: Processing frame: 117\n[2026-07-29 15:08:13,486] INFO: Processing frame: 118\n[2026-07-29 15:08:13,542] INFO: Processing frame: 119\n[2026-07-29 15:08:13,600] INFO: Processing frame: 120\n[2026-07-29 15:08:13,656] INFO: Processing frame: 121\n[2026-07-29 15:08:13,715] INFO: Processing frame: 122\n[2026-07-29 15:08:13,772] INFO: Processing frame: 123\n[2026-07-29 15:08:13,828] INFO: Processing frame: 124\n[2026-07-29 15:08:13,884] INFO: Processing frame: 125\n[2026-07-29 15:08:13,940] INFO: Processing frame: 126\n[2026-07-29 15:08:13,998] INFO: Processing frame: 127\n[2026-07-29 15:08:14,057] INFO: Processing frame: 128\n[2026-07-29 15:08:14,114] INFO: Processing frame: 129\n[2026-07-29 15:08:14,171] INFO: Processing frame: 130\n[2026-07-29 15:08:14,227] INFO: Processing frame: 131\n[2026-07-29 15:08:14,279] INFO: Processing frame: 132\n[2026-07-29 15:08:14,329] INFO: Processing frame: 133\n[2026-07-29 15:08:14,379] INFO: Processing frame: 134\n[2026-07-29 15:08:14,429] INFO: Processing frame: 135\n[2026-07-29 15:08:14,480] INFO: Processing frame: 136\n[2026-07-29 15:08:14,531] INFO: Processing frame: 137\n[2026-07-29 15:08:14,582] INFO: Processing frame: 138\n[2026-07-29 15:08:14,632] INFO: Processing frame: 139\n[2026-07-29 15:08:14,682] INFO: Processing frame: 140\n[2026-07-29 15:08:14,733] INFO: Processing frame: 141\n[2026-07-29 15:08:14,784] INFO: Processing frame: 142\n[2026-07-29 15:08:14,831] INFO: Processing frame: 143\n[2026-07-29 15:08:14,879] INFO: Processing frame: 144\n[2026-07-29 15:08:14,926] INFO: Processing frame: 145\n[2026-07-29 15:08:14,972] INFO: Processing frame: 146\n[2026-07-29 15:08:15,021] INFO: Processing frame: 147\n[2026-07-29 15:08:15,067] INFO: Processing frame: 148\n[2026-07-29 15:08:15,111] INFO: Processing frame: 149\n[2026-07-29 15:08:15,156] INFO: Processing frame: 150\n[2026-07-29 15:08:15,201] INFO: Processing frame: 151\n[2026-07-29 15:08:15,246] INFO: Processing frame: 152\n[2026-07-29 15:08:15,290] INFO: Processing frame: 153\n[2026-07-29 15:08:15,335] INFO: Processing frame: 154\n[2026-07-29 15:08:15,380] INFO: Processing frame: 155\n[2026-07-29 15:08:15,426] INFO: Processing frame: 156\n[2026-07-29 15:08:15,471] INFO: Processing frame: 157\n[2026-07-29 15:08:15,518] INFO: Processing frame: 158\n[2026-07-29 15:08:15,567] INFO: Processing frame: 159\n[2026-07-29 15:08:15,618] INFO: Processing frame: 160\n[2026-07-29 15:08:15,668] INFO: Processing frame: 161\n[2026-07-29 15:08:15,718] INFO: Processing frame: 162\n[2026-07-29 15:08:15,768] INFO: Processing frame: 163\n[2026-07-29 15:08:15,819] INFO: Processing frame: 164\n[2026-07-29 15:08:15,869] INFO: Processing frame: 165\n[2026-07-29 15:08:15,919] INFO: Processing frame: 166\n[2026-07-29 15:08:15,968] INFO: Processing frame: 167\n[2026-07-29 15:08:16,017] INFO: Processing frame: 168\n[2026-07-29 15:08:16,068] INFO: Processing frame: 169\nSaving field maps and displacement maps to file...\nDone.\n"
+                },
+                "apply": {
+                  "status": "complete",
+                  "wall": 973.2193705150858,
+                  "peak_gb": 1.1287956237792969,
+                  "completed_echoes": 2,
+                  "commands": [
+                    {
+                      "wall": 501.2244267370552,
+                      "peak_gb": 1.1244964599609375,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/echo2/warpkit/16/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/echo2/warpkit/16/undistorted_echo-1.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/echo2/warpkit/16/fmap_displacementmaps.nii'], output='bench_out/linux1/echo2/warpkit/16/undistorted_echo-1.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 170; transform frames: 170 (type=map)\n  resampled frame 10/170\n  resampled frame 20/170\n  resampled frame 30/170\n  resampled frame 40/170\n  resampled frame 50/170\n  resampled frame 60/170\n  resampled frame 70/170\n  resampled frame 80/170\n  resampled frame 90/170\n  resampled frame 100/170\n  resampled frame 110/170\n  resampled frame 120/170\n  resampled frame 130/170\n  resampled frame 140/170\n  resampled frame 150/170\n  resampled frame 160/170\n  resampled frame 170/170\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/echo2/warpkit/16/undistorted_echo-1.nii...\nDone.\n"
+                    },
+                    {
+                      "wall": 471.9949437780306,
+                      "peak_gb": 1.1287956237792969,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/echo2/warpkit/16/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/echo2/warpkit/16/undistorted_echo-2.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/echo2/warpkit/16/fmap_displacementmaps.nii'], output='bench_out/linux1/echo2/warpkit/16/undistorted_echo-2.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 170; transform frames: 170 (type=map)\n  resampled frame 10/170\n  resampled frame 20/170\n  resampled frame 30/170\n  resampled frame 40/170\n  resampled frame 50/170\n  resampled frame 60/170\n  resampled frame 70/170\n  resampled frame 80/170\n  resampled frame 90/170\n  resampled frame 100/170\n  resampled frame 110/170\n  resampled frame 120/170\n  resampled frame 130/170\n  resampled frame 140/170\n  resampled frame 150/170\n  resampled frame 160/170\n  resampled frame 170/170\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/echo2/warpkit/16/undistorted_echo-2.nii...\nDone.\n"
+                    }
+                  ]
+                },
+                "completed_at": "2026-07-29T15:24:35.222885-04:00"
+              }
+            ]
+          },
+          "niimath": {
+            "measurements": [
+              {
+                "status": "complete",
+                "started_at": "2026-07-29T15:24:35.223709-04:00",
+                "estimate": {
+                  "wall": 15.724150977097452,
+                  "peak_gb": 1.3209877014160156,
+                  "rc": 0,
+                  "command": [
+                    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                    "--medic",
+                    "--magnitude",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-mag_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-mag_bold.nii.gz",
+                    "--phase",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-phase_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-phase_bold.nii.gz",
+                    "--te-ms",
+                    "16.8,38.56",
+                    "--total-readout-time",
+                    "0.02025",
+                    "--phase-encoding-direction",
+                    "j",
+                    "--n-cpus",
+                    "16",
+                    "--gz",
+                    "0",
+                    "--out-prefix",
+                    "bench_out/linux1/echo2/niimath/16/fmap",
+                    "--mask",
+                    "/ZPOOL/data/projects/medic_bench/echo2bet.nii.gz"
+                  ],
+                  "environment": {
+                    "OMP_NUM_THREADS": "16",
+                    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                    "MKL_NUM_THREADS": "16",
+                    "OPENBLAS_NUM_THREADS": "16",
+                    "NUMEXPR_NUM_THREADS": "16",
+                    "VECLIB_MAXIMUM_THREADS": "16",
+                    "FSLOUTPUTTYPE": "NIFTI"
+                  },
+                  "stderr_tail": "--medic: 76x76x46, 2 echo(es), 170 frame(s); working set ~1.18 GiB\n--medic: displacement inversion: 168830 voxel(s) (0.374%) still moving by >0.001 Hz after 64 iterations; 30122 folded adjacent pair(s) (0.067% of voxels) mark columns where the forward map is not monotone, so the inverse is multi-valued and the branch chosen is arbitrary\n"
+                },
+                "apply": {
+                  "status": "complete",
+                  "wall": 5.444385898299515,
+                  "peak_gb": 0.5048179626464844,
+                  "completed_echoes": 2,
+                  "commands": [
+                    {
+                      "wall": 2.7258522417396307,
+                      "peak_gb": 0.5048179626464844,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-1_part-mag_bold.nii.gz",
+                        "-p",
+                        "16",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/echo2/niimath/16/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/echo2/niimath/16/undistorted_echo-1.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 16 threads\n"
+                    },
+                    {
+                      "wall": 2.7185336565598845,
+                      "peak_gb": 0.5039138793945312,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/ZPOOL/data/projects/medic_bench/echo2/sub-crlab/func/sub-crlab_task-rest_acq-2d2echo_run-02_echo-2_part-mag_bold.nii.gz",
+                        "-p",
+                        "16",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/echo2/niimath/16/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/echo2/niimath/16/undistorted_echo-2.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 16 threads\n"
+                    }
+                  ]
+                },
+                "completed_at": "2026-07-29T15:24:56.528428-04:00"
+              }
+            ]
+          }
+        }
+      },
+      "agreement": {
+        "1": {
+          "status": "complete",
+          "corr": 0.9961670301619666,
+          "voxels": 45168320,
+          "engine": "numpy-memmap"
+        },
+        "16": {
+          "status": "complete",
+          "corr": 0.9961670301619666,
+          "voxels": 45168320,
+          "engine": "numpy-memmap"
+        }
+      },
+      "failures": []
+    },
+    "echo3": {
+      "dataset": {
+        "key": "echo3",
+        "accession": "bundled",
+        "snapshot": "medic_bench repository content",
+        "resolved_commit": "5036d63cefa92d17b80325693a646865a9e7700b",
+        "subject": "sub-crlab",
+        "session": null,
+        "task": "rest",
+        "run": "03",
+        "echo_count": 3,
+        "echoes": [
+          1,
+          2,
+          3
+        ],
+        "frame_count": 138,
+        "image_dimensions": [
+          76,
+          76,
+          46
+        ],
+        "voxel_size_mm": [
+          2.8026299476623535,
+          2.8026299476623535,
+          2.799999952316284
+        ],
+        "echo_times_ms": [
+          14.8,
+          34.38,
+          53.940000000000005
+        ],
+        "total_readout_time_seconds": 0.02025,
+        "phase_encoding_direction": "j"
+      },
+      "mask": "supplied to niimath only",
+      "runs": {
+        "1": {
+          "warpkit": {
+            "measurements": [
+              {
+                "status": "complete",
+                "started_at": "2026-07-29T15:24:56.529562-04:00",
+                "estimate": {
+                  "wall": 173.82061638776213,
+                  "peak_gb": 2.1946563720703125,
+                  "rc": 0,
+                  "command": [
+                    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-medic",
+                    "--magnitude",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-mag_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-mag_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-mag_bold.nii.gz",
+                    "--phase",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-phase_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-phase_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-phase_bold.nii.gz",
+                    "--metadata",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-phase_bold.json",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-phase_bold.json",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-phase_bold.json",
+                    "--out-prefix",
+                    "bench_out/linux1/echo3/warpkit/1/fmap",
+                    "-n",
+                    "1"
+                  ],
+                  "environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "FSLOUTPUTTYPE": "NIFTI"
+                  },
+                  "stdout_tail": ":28,114] INFO: Processing frame: 64\n[2026-07-29 15:27:28,358] INFO: Processing frame: 65\n[2026-07-29 15:27:28,610] INFO: Processing frame: 66\n[2026-07-29 15:27:28,838] INFO: Processing frame: 67\n[2026-07-29 15:27:29,068] INFO: Processing frame: 68\n[2026-07-29 15:27:29,297] INFO: Processing frame: 69\n[2026-07-29 15:27:29,526] INFO: Processing frame: 70\n[2026-07-29 15:27:29,761] INFO: Processing frame: 71\n[2026-07-29 15:27:29,993] INFO: Processing frame: 72\n[2026-07-29 15:27:30,222] INFO: Processing frame: 73\n[2026-07-29 15:27:30,450] INFO: Processing frame: 74\n[2026-07-29 15:27:30,691] INFO: Processing frame: 75\n[2026-07-29 15:27:30,938] INFO: Processing frame: 76\n[2026-07-29 15:27:31,167] INFO: Processing frame: 77\n[2026-07-29 15:27:31,396] INFO: Processing frame: 78\n[2026-07-29 15:27:31,625] INFO: Processing frame: 79\n[2026-07-29 15:27:31,860] INFO: Processing frame: 80\n[2026-07-29 15:27:32,189] INFO: Processing frame: 81\n[2026-07-29 15:27:32,418] INFO: Processing frame: 82\n[2026-07-29 15:27:32,652] INFO: Processing frame: 83\n[2026-07-29 15:27:32,881] INFO: Processing frame: 84\n[2026-07-29 15:27:33,124] INFO: Processing frame: 85\n[2026-07-29 15:27:33,370] INFO: Processing frame: 86\n[2026-07-29 15:27:33,599] INFO: Processing frame: 87\n[2026-07-29 15:27:33,829] INFO: Processing frame: 88\n[2026-07-29 15:27:34,065] INFO: Processing frame: 89\n[2026-07-29 15:27:34,294] INFO: Processing frame: 90\n[2026-07-29 15:27:34,524] INFO: Processing frame: 91\n[2026-07-29 15:27:34,754] INFO: Processing frame: 92\n[2026-07-29 15:27:34,983] INFO: Processing frame: 93\n[2026-07-29 15:27:35,213] INFO: Processing frame: 94\n[2026-07-29 15:27:35,449] INFO: Processing frame: 95\n[2026-07-29 15:27:35,695] INFO: Processing frame: 96\n[2026-07-29 15:27:35,927] INFO: Processing frame: 97\n[2026-07-29 15:27:36,156] INFO: Processing frame: 98\n[2026-07-29 15:27:36,386] INFO: Processing frame: 99\n[2026-07-29 15:27:36,620] INFO: Processing frame: 100\n[2026-07-29 15:27:36,848] INFO: Processing frame: 101\n[2026-07-29 15:27:37,078] INFO: Processing frame: 102\n[2026-07-29 15:27:37,307] INFO: Processing frame: 103\n[2026-07-29 15:27:37,535] INFO: Processing frame: 104\n[2026-07-29 15:27:37,768] INFO: Processing frame: 105\n[2026-07-29 15:27:38,015] INFO: Processing frame: 106\n[2026-07-29 15:27:38,250] INFO: Processing frame: 107\n[2026-07-29 15:27:38,479] INFO: Processing frame: 108\n[2026-07-29 15:27:38,715] INFO: Processing frame: 109\n[2026-07-29 15:27:38,945] INFO: Processing frame: 110\n[2026-07-29 15:27:39,174] INFO: Processing frame: 111\n[2026-07-29 15:27:39,403] INFO: Processing frame: 112\n[2026-07-29 15:27:39,633] INFO: Processing frame: 113\n[2026-07-29 15:27:39,862] INFO: Processing frame: 114\n[2026-07-29 15:27:40,091] INFO: Processing frame: 115\n[2026-07-29 15:27:40,337] INFO: Processing frame: 116\n[2026-07-29 15:27:40,580] INFO: Processing frame: 117\n[2026-07-29 15:27:40,818] INFO: Processing frame: 118\n[2026-07-29 15:27:41,047] INFO: Processing frame: 119\n[2026-07-29 15:27:41,276] INFO: Processing frame: 120\n[2026-07-29 15:27:41,505] INFO: Processing frame: 121\n[2026-07-29 15:27:41,734] INFO: Processing frame: 122\n[2026-07-29 15:27:41,963] INFO: Processing frame: 123\n[2026-07-29 15:27:42,191] INFO: Processing frame: 124\n[2026-07-29 15:27:42,467] INFO: Processing frame: 125\n[2026-07-29 15:27:42,704] INFO: Processing frame: 126\n[2026-07-29 15:27:42,947] INFO: Processing frame: 127\n[2026-07-29 15:27:43,176] INFO: Processing frame: 128\n[2026-07-29 15:27:43,406] INFO: Processing frame: 129\n[2026-07-29 15:27:43,636] INFO: Processing frame: 130\n[2026-07-29 15:27:43,865] INFO: Processing frame: 131\n[2026-07-29 15:27:44,094] INFO: Processing frame: 132\n[2026-07-29 15:27:44,323] INFO: Processing frame: 133\n[2026-07-29 15:27:44,553] INFO: Processing frame: 134\n[2026-07-29 15:27:44,790] INFO: Processing frame: 135\n[2026-07-29 15:27:45,028] INFO: Processing frame: 136\n[2026-07-29 15:27:45,276] INFO: Processing frame: 137\nSaving field maps and displacement maps to file...\nDone.\n"
+                },
+                "apply": {
+                  "status": "complete",
+                  "wall": 3323.191028546542,
+                  "peak_gb": 0.9382972717285156,
+                  "completed_echoes": 3,
+                  "commands": [
+                    {
+                      "wall": 1022.7580323154107,
+                      "peak_gb": 0.9382972717285156,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/echo3/warpkit/1/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/echo3/warpkit/1/undistorted_echo-1.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/echo3/warpkit/1/fmap_displacementmaps.nii'], output='bench_out/linux1/echo3/warpkit/1/undistorted_echo-1.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 138; transform frames: 138 (type=map)\n  resampled frame 10/138\n  resampled frame 20/138\n  resampled frame 30/138\n  resampled frame 40/138\n  resampled frame 50/138\n  resampled frame 60/138\n  resampled frame 70/138\n  resampled frame 80/138\n  resampled frame 90/138\n  resampled frame 100/138\n  resampled frame 110/138\n  resampled frame 120/138\n  resampled frame 130/138\n  resampled frame 138/138\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/echo3/warpkit/1/undistorted_echo-1.nii...\nDone.\n"
+                    },
+                    {
+                      "wall": 1049.432604542002,
+                      "peak_gb": 0.9377021789550781,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/echo3/warpkit/1/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/echo3/warpkit/1/undistorted_echo-2.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/echo3/warpkit/1/fmap_displacementmaps.nii'], output='bench_out/linux1/echo3/warpkit/1/undistorted_echo-2.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 138; transform frames: 138 (type=map)\n  resampled frame 10/138\n  resampled frame 20/138\n  resampled frame 30/138\n  resampled frame 40/138\n  resampled frame 50/138\n  resampled frame 60/138\n  resampled frame 70/138\n  resampled frame 80/138\n  resampled frame 90/138\n  resampled frame 100/138\n  resampled frame 110/138\n  resampled frame 120/138\n  resampled frame 130/138\n  resampled frame 138/138\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/echo3/warpkit/1/undistorted_echo-2.nii...\nDone.\n"
+                    },
+                    {
+                      "wall": 1251.0003916891292,
+                      "peak_gb": 0.9355125427246094,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/echo3/warpkit/1/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/echo3/warpkit/1/undistorted_echo-3.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/echo3/warpkit/1/fmap_displacementmaps.nii'], output='bench_out/linux1/echo3/warpkit/1/undistorted_echo-3.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 138; transform frames: 138 (type=map)\n  resampled frame 10/138\n  resampled frame 20/138\n  resampled frame 30/138\n  resampled frame 40/138\n  resampled frame 50/138\n  resampled frame 60/138\n  resampled frame 70/138\n  resampled frame 80/138\n  resampled frame 90/138\n  resampled frame 100/138\n  resampled frame 110/138\n  resampled frame 120/138\n  resampled frame 130/138\n  resampled frame 138/138\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/echo3/warpkit/1/undistorted_echo-3.nii...\nDone.\n"
+                    }
+                  ]
+                },
+                "completed_at": "2026-07-29T16:23:13.710040-04:00"
+              }
+            ]
+          },
+          "niimath": {
+            "measurements": [
+              {
+                "status": "complete",
+                "started_at": "2026-07-29T16:23:13.711023-04:00",
+                "estimate": {
+                  "wall": 46.411950749345124,
+                  "peak_gb": 1.2698554992675781,
+                  "rc": 0,
+                  "command": [
+                    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                    "--medic",
+                    "--magnitude",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-mag_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-mag_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-mag_bold.nii.gz",
+                    "--phase",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-phase_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-phase_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-phase_bold.nii.gz",
+                    "--te-ms",
+                    "14.8,34.38,53.94",
+                    "--total-readout-time",
+                    "0.02025",
+                    "--phase-encoding-direction",
+                    "j",
+                    "--n-cpus",
+                    "1",
+                    "--gz",
+                    "0",
+                    "--out-prefix",
+                    "bench_out/linux1/echo3/niimath/1/fmap",
+                    "--mask",
+                    "/ZPOOL/data/projects/medic_bench/echo3bet.nii.gz"
+                  ],
+                  "environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "FSLOUTPUTTYPE": "NIFTI"
+                  },
+                  "stderr_tail": "--medic: 76x76x46, 3 echo(es), 138 frame(s); working set ~1.23 GiB\n--medic: displacement inversion: 140434 voxel(s) (0.383%) still moving by >0.001 Hz after 64 iterations; 21118 folded adjacent pair(s) (0.058% of voxels) mark columns where the forward map is not monotone, so the inverse is multi-valued and the branch chosen is arbitrary\n"
+                },
+                "apply": {
+                  "status": "complete",
+                  "wall": 48.93598937056959,
+                  "peak_gb": 0.41167449951171875,
+                  "completed_echoes": 3,
+                  "commands": [
+                    {
+                      "wall": 16.372727413661778,
+                      "peak_gb": 0.41167449951171875,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-mag_bold.nii.gz",
+                        "-p",
+                        "1",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/echo3/niimath/1/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/echo3/niimath/1/undistorted_echo-1.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 1 threads\n"
+                    },
+                    {
+                      "wall": 16.307244941592216,
+                      "peak_gb": 0.4114532470703125,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-mag_bold.nii.gz",
+                        "-p",
+                        "1",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/echo3/niimath/1/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/echo3/niimath/1/undistorted_echo-2.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 1 threads\n"
+                    },
+                    {
+                      "wall": 16.256017015315592,
+                      "peak_gb": 0.4112586975097656,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-mag_bold.nii.gz",
+                        "-p",
+                        "1",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/echo3/niimath/1/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/echo3/niimath/1/undistorted_echo-3.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 1 threads\n"
+                    }
+                  ]
+                },
+                "completed_at": "2026-07-29T16:24:49.218743-04:00"
+              }
+            ]
+          }
+        },
+        "16": {
+          "warpkit": {
+            "measurements": [
+              {
+                "status": "complete",
+                "started_at": "2026-07-29T16:24:49.219541-04:00",
+                "estimate": {
+                  "wall": 80.1227694619447,
+                  "peak_gb": 2.776622772216797,
+                  "rc": 0,
+                  "command": [
+                    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-medic",
+                    "--magnitude",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-mag_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-mag_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-mag_bold.nii.gz",
+                    "--phase",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-phase_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-phase_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-phase_bold.nii.gz",
+                    "--metadata",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-phase_bold.json",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-phase_bold.json",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-phase_bold.json",
+                    "--out-prefix",
+                    "bench_out/linux1/echo3/warpkit/16/fmap",
+                    "-n",
+                    "16"
+                  ],
+                  "environment": {
+                    "OMP_NUM_THREADS": "16",
+                    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                    "MKL_NUM_THREADS": "16",
+                    "OPENBLAS_NUM_THREADS": "16",
+                    "NUMEXPR_NUM_THREADS": "16",
+                    "VECLIB_MAXIMUM_THREADS": "16",
+                    "FSLOUTPUTTYPE": "NIFTI"
+                  },
+                  "stdout_tail": ":58,626] INFO: Processing frame: 64\n[2026-07-29 16:25:58,674] INFO: Processing frame: 65\n[2026-07-29 16:25:58,722] INFO: Processing frame: 66\n[2026-07-29 16:25:58,772] INFO: Processing frame: 67\n[2026-07-29 16:25:58,820] INFO: Processing frame: 68\n[2026-07-29 16:25:58,866] INFO: Processing frame: 69\n[2026-07-29 16:25:58,914] INFO: Processing frame: 70\n[2026-07-29 16:25:58,962] INFO: Processing frame: 71\n[2026-07-29 16:25:59,010] INFO: Processing frame: 72\n[2026-07-29 16:25:59,059] INFO: Processing frame: 73\n[2026-07-29 16:25:59,105] INFO: Processing frame: 74\n[2026-07-29 16:25:59,152] INFO: Processing frame: 75\n[2026-07-29 16:25:59,200] INFO: Processing frame: 76\n[2026-07-29 16:25:59,246] INFO: Processing frame: 77\n[2026-07-29 16:25:59,293] INFO: Processing frame: 78\n[2026-07-29 16:25:59,340] INFO: Processing frame: 79\n[2026-07-29 16:25:59,388] INFO: Processing frame: 80\n[2026-07-29 16:25:59,436] INFO: Processing frame: 81\n[2026-07-29 16:25:59,485] INFO: Processing frame: 82\n[2026-07-29 16:25:59,531] INFO: Processing frame: 83\n[2026-07-29 16:25:59,580] INFO: Processing frame: 84\n[2026-07-29 16:25:59,628] INFO: Processing frame: 85\n[2026-07-29 16:25:59,676] INFO: Processing frame: 86\n[2026-07-29 16:25:59,723] INFO: Processing frame: 87\n[2026-07-29 16:25:59,771] INFO: Processing frame: 88\n[2026-07-29 16:25:59,817] INFO: Processing frame: 89\n[2026-07-29 16:25:59,862] INFO: Processing frame: 90\n[2026-07-29 16:25:59,910] INFO: Processing frame: 91\n[2026-07-29 16:25:59,957] INFO: Processing frame: 92\n[2026-07-29 16:26:00,004] INFO: Processing frame: 93\n[2026-07-29 16:26:00,051] INFO: Processing frame: 94\n[2026-07-29 16:26:00,100] INFO: Processing frame: 95\n[2026-07-29 16:26:00,149] INFO: Processing frame: 96\n[2026-07-29 16:26:00,195] INFO: Processing frame: 97\n[2026-07-29 16:26:00,240] INFO: Processing frame: 98\n[2026-07-29 16:26:00,284] INFO: Processing frame: 99\n[2026-07-29 16:26:00,329] INFO: Processing frame: 100\n[2026-07-29 16:26:00,373] INFO: Processing frame: 101\n[2026-07-29 16:26:00,419] INFO: Processing frame: 102\n[2026-07-29 16:26:00,464] INFO: Processing frame: 103\n[2026-07-29 16:26:00,509] INFO: Processing frame: 104\n[2026-07-29 16:26:00,554] INFO: Processing frame: 105\n[2026-07-29 16:26:00,603] INFO: Processing frame: 106\n[2026-07-29 16:26:00,652] INFO: Processing frame: 107\n[2026-07-29 16:26:00,699] INFO: Processing frame: 108\n[2026-07-29 16:26:00,747] INFO: Processing frame: 109\n[2026-07-29 16:26:00,797] INFO: Processing frame: 110\n[2026-07-29 16:26:00,844] INFO: Processing frame: 111\n[2026-07-29 16:26:00,890] INFO: Processing frame: 112\n[2026-07-29 16:26:00,936] INFO: Processing frame: 113\n[2026-07-29 16:26:00,985] INFO: Processing frame: 114\n[2026-07-29 16:26:01,033] INFO: Processing frame: 115\n[2026-07-29 16:26:01,081] INFO: Processing frame: 116\n[2026-07-29 16:26:01,129] INFO: Processing frame: 117\n[2026-07-29 16:26:01,177] INFO: Processing frame: 118\n[2026-07-29 16:26:01,226] INFO: Processing frame: 119\n[2026-07-29 16:26:01,276] INFO: Processing frame: 120\n[2026-07-29 16:26:01,326] INFO: Processing frame: 121\n[2026-07-29 16:26:01,375] INFO: Processing frame: 122\n[2026-07-29 16:26:01,422] INFO: Processing frame: 123\n[2026-07-29 16:26:01,472] INFO: Processing frame: 124\n[2026-07-29 16:26:01,521] INFO: Processing frame: 125\n[2026-07-29 16:26:01,570] INFO: Processing frame: 126\n[2026-07-29 16:26:01,618] INFO: Processing frame: 127\n[2026-07-29 16:26:01,666] INFO: Processing frame: 128\n[2026-07-29 16:26:01,715] INFO: Processing frame: 129\n[2026-07-29 16:26:01,764] INFO: Processing frame: 130\n[2026-07-29 16:26:01,813] INFO: Processing frame: 131\n[2026-07-29 16:26:01,863] INFO: Processing frame: 132\n[2026-07-29 16:26:01,911] INFO: Processing frame: 133\n[2026-07-29 16:26:01,960] INFO: Processing frame: 134\n[2026-07-29 16:26:02,008] INFO: Processing frame: 135\n[2026-07-29 16:26:02,055] INFO: Processing frame: 136\n[2026-07-29 16:26:02,106] INFO: Processing frame: 137\nSaving field maps and displacement maps to file...\nDone.\n"
+                },
+                "apply": {
+                  "status": "complete",
+                  "wall": 1229.2085957517847,
+                  "peak_gb": 0.9385528564453125,
+                  "completed_echoes": 3,
+                  "commands": [
+                    {
+                      "wall": 443.32462191581726,
+                      "peak_gb": 0.9385528564453125,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/echo3/warpkit/16/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/echo3/warpkit/16/undistorted_echo-1.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/echo3/warpkit/16/fmap_displacementmaps.nii'], output='bench_out/linux1/echo3/warpkit/16/undistorted_echo-1.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 138; transform frames: 138 (type=map)\n  resampled frame 10/138\n  resampled frame 20/138\n  resampled frame 30/138\n  resampled frame 40/138\n  resampled frame 50/138\n  resampled frame 60/138\n  resampled frame 70/138\n  resampled frame 80/138\n  resampled frame 90/138\n  resampled frame 100/138\n  resampled frame 110/138\n  resampled frame 120/138\n  resampled frame 130/138\n  resampled frame 138/138\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/echo3/warpkit/16/undistorted_echo-1.nii...\nDone.\n"
+                    },
+                    {
+                      "wall": 382.306930613704,
+                      "peak_gb": 0.9367713928222656,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/echo3/warpkit/16/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/echo3/warpkit/16/undistorted_echo-2.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/echo3/warpkit/16/fmap_displacementmaps.nii'], output='bench_out/linux1/echo3/warpkit/16/undistorted_echo-2.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 138; transform frames: 138 (type=map)\n  resampled frame 10/138\n  resampled frame 20/138\n  resampled frame 30/138\n  resampled frame 40/138\n  resampled frame 50/138\n  resampled frame 60/138\n  resampled frame 70/138\n  resampled frame 80/138\n  resampled frame 90/138\n  resampled frame 100/138\n  resampled frame 110/138\n  resampled frame 120/138\n  resampled frame 130/138\n  resampled frame 138/138\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/echo3/warpkit/16/undistorted_echo-2.nii...\nDone.\n"
+                    },
+                    {
+                      "wall": 403.57704322226346,
+                      "peak_gb": 0.9377593994140625,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/echo3/warpkit/16/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/echo3/warpkit/16/undistorted_echo-3.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/echo3/warpkit/16/fmap_displacementmaps.nii'], output='bench_out/linux1/echo3/warpkit/16/undistorted_echo-3.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 138; transform frames: 138 (type=map)\n  resampled frame 10/138\n  resampled frame 20/138\n  resampled frame 30/138\n  resampled frame 40/138\n  resampled frame 50/138\n  resampled frame 60/138\n  resampled frame 70/138\n  resampled frame 80/138\n  resampled frame 90/138\n  resampled frame 100/138\n  resampled frame 110/138\n  resampled frame 120/138\n  resampled frame 130/138\n  resampled frame 138/138\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/echo3/warpkit/16/undistorted_echo-3.nii...\nDone.\n"
+                    }
+                  ]
+                },
+                "completed_at": "2026-07-29T16:46:38.713216-04:00"
+              }
+            ]
+          },
+          "niimath": {
+            "measurements": [
+              {
+                "status": "complete",
+                "started_at": "2026-07-29T16:46:38.714011-04:00",
+                "estimate": {
+                  "wall": 13.28698034118861,
+                  "peak_gb": 1.3646697998046875,
+                  "rc": 0,
+                  "command": [
+                    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                    "--medic",
+                    "--magnitude",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-mag_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-mag_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-mag_bold.nii.gz",
+                    "--phase",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-phase_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-phase_bold.nii.gz",
+                    "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-phase_bold.nii.gz",
+                    "--te-ms",
+                    "14.8,34.38,53.94",
+                    "--total-readout-time",
+                    "0.02025",
+                    "--phase-encoding-direction",
+                    "j",
+                    "--n-cpus",
+                    "16",
+                    "--gz",
+                    "0",
+                    "--out-prefix",
+                    "bench_out/linux1/echo3/niimath/16/fmap",
+                    "--mask",
+                    "/ZPOOL/data/projects/medic_bench/echo3bet.nii.gz"
+                  ],
+                  "environment": {
+                    "OMP_NUM_THREADS": "16",
+                    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                    "MKL_NUM_THREADS": "16",
+                    "OPENBLAS_NUM_THREADS": "16",
+                    "NUMEXPR_NUM_THREADS": "16",
+                    "VECLIB_MAXIMUM_THREADS": "16",
+                    "FSLOUTPUTTYPE": "NIFTI"
+                  },
+                  "stderr_tail": "--medic: 76x76x46, 3 echo(es), 138 frame(s); working set ~1.23 GiB\n--medic: displacement inversion: 140434 voxel(s) (0.383%) still moving by >0.001 Hz after 64 iterations; 21118 folded adjacent pair(s) (0.058% of voxels) mark columns where the forward map is not monotone, so the inverse is multi-valued and the branch chosen is arbitrary\n"
+                },
+                "apply": {
+                  "status": "complete",
+                  "wall": 7.072652829810977,
+                  "peak_gb": 0.4090728759765625,
+                  "completed_echoes": 3,
+                  "commands": [
+                    {
+                      "wall": 2.332356456667185,
+                      "peak_gb": 0.40845489501953125,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-1_part-mag_bold.nii.gz",
+                        "-p",
+                        "16",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/echo3/niimath/16/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/echo3/niimath/16/undistorted_echo-1.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 16 threads\n"
+                    },
+                    {
+                      "wall": 2.2278242111206055,
+                      "peak_gb": 0.4086723327636719,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-2_part-mag_bold.nii.gz",
+                        "-p",
+                        "16",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/echo3/niimath/16/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/echo3/niimath/16/undistorted_echo-2.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 16 threads\n"
+                    },
+                    {
+                      "wall": 2.5124721620231867,
+                      "peak_gb": 0.4090728759765625,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/ZPOOL/data/projects/medic_bench/echo3/sub-crlab/func/sub-crlab_task-rest_acq-2d3echo_run-03_echo-3_part-mag_bold.nii.gz",
+                        "-p",
+                        "16",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/echo3/niimath/16/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/echo3/niimath/16/undistorted_echo-3.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 16 threads\n"
+                    }
+                  ]
+                },
+                "completed_at": "2026-07-29T16:46:59.254953-04:00"
+              }
+            ]
+          }
+        }
+      },
+      "agreement": {
+        "1": {
+          "status": "complete",
+          "corr": 0.9962783108102466,
+          "voxels": 36666048,
+          "engine": "numpy-memmap"
+        },
+        "16": {
+          "status": "complete",
+          "corr": 0.9962783108102466,
+          "voxels": 36666048,
+          "engine": "numpy-memmap"
+        }
+      },
+      "failures": []
+    },
+    "openneuro-ds005123": {
+      "dataset": {
+        "key": "openneuro-ds005123",
+        "description": "One complete four-echo UGR run from OpenNeuro ds005123",
+        "accession": "ds005123",
+        "snapshot": "1.1.3",
+        "resolved_commit": "a3213b56b7bd27d7e3ac10577558eb26bb7c2a61",
+        "immutable_dataset_id": "ds005123@1.1.3:a3213b56b7bd27d7e3ac10577558eb26bb7c2a61",
+        "subject": "sub-10317",
+        "session": null,
+        "task": "ugr",
+        "run": "1",
+        "manifest": "/ZPOOL/data/projects/medic_bench/manifests/openneuro-ds005123-1.1.3.json",
+        "verified_files": [
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-mag_bold.nii.gz",
+            "size_bytes": 114000327,
+            "sha256": "b4dd956f38cb2f61baf6bf34b45850748661d6682bbf677adf7c619ccc12fe69",
+            "git_annex_key": "SHA256E-s114000327--b4dd956f38cb2f61baf6bf34b45850748661d6682bbf677adf7c619ccc12fe69.nii.gz"
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-mag_bold.json",
+            "size_bytes": 3253,
+            "sha256": "1a8bda84f7d147487c5bc9aa7c08c3e1c180430a48b5e003818d0c109ad54198",
+            "git_annex_key": null
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-phase_bold.nii.gz",
+            "size_bytes": 133789871,
+            "sha256": "81b1ae634b9dcfc498edc2efa9ebebddd83ec8b40895ea762f1a3fc9db03a551",
+            "git_annex_key": "SHA256E-s133789871--81b1ae634b9dcfc498edc2efa9ebebddd83ec8b40895ea762f1a3fc9db03a551.nii.gz"
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-phase_bold.json",
+            "size_bytes": 3301,
+            "sha256": "8f3bdec6edade526c4148ad04661e0e1aaa9a7f5cc50b3493dadafde3fd93f88",
+            "git_annex_key": null
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-mag_bold.nii.gz",
+            "size_bytes": 107468221,
+            "sha256": "d4d580e287db0e06fa2a2c0b489e584ca595ddb6527e90f391df74aaf16ac239",
+            "git_annex_key": "SHA256E-s107468221--d4d580e287db0e06fa2a2c0b489e584ca595ddb6527e90f391df74aaf16ac239.nii.gz"
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-mag_bold.json",
+            "size_bytes": 3254,
+            "sha256": "2b5a8f13547b826ccf1e302875170f5d7ae3f4c1f77da8f474fe409233bb6d3e",
+            "git_annex_key": null
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-phase_bold.nii.gz",
+            "size_bytes": 134159930,
+            "sha256": "dafbc72e542dee66397205ab409f04eb465a848a5468e1790da2aacd82748631",
+            "git_annex_key": "SHA256E-s134159930--dafbc72e542dee66397205ab409f04eb465a848a5468e1790da2aacd82748631.nii.gz"
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-phase_bold.json",
+            "size_bytes": 3302,
+            "sha256": "c5a73990cb2832769c910fa94527a457401a75969247ba35a108d0e8edc8f55b",
+            "git_annex_key": null
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-mag_bold.nii.gz",
+            "size_bytes": 103834998,
+            "sha256": "951ffcbfd4deaa0ad7b4e0329d72c9c2bec38c56ea2bd87d47d48bdb2f151818",
+            "git_annex_key": "SHA256E-s103834998--951ffcbfd4deaa0ad7b4e0329d72c9c2bec38c56ea2bd87d47d48bdb2f151818.nii.gz"
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-mag_bold.json",
+            "size_bytes": 3251,
+            "sha256": "ad6efddd104295de495fa723c4fdad19ece80bc65452412a3afe01661383ef88",
+            "git_annex_key": null
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-phase_bold.nii.gz",
+            "size_bytes": 134283764,
+            "sha256": "ae2bb48d64a3432500694c9bfe020f230945d23ab777349caa70cdd2b737c6a4",
+            "git_annex_key": "SHA256E-s134283764--ae2bb48d64a3432500694c9bfe020f230945d23ab777349caa70cdd2b737c6a4.nii.gz"
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-phase_bold.json",
+            "size_bytes": 3299,
+            "sha256": "d38757dfee68c6f06c361cbb2132f1acb776be0cb7ca17efaff68794dcf4ca42",
+            "git_annex_key": null
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-mag_bold.nii.gz",
+            "size_bytes": 101438154,
+            "sha256": "33f631a091cc80cbacfe0d0b978cb43dac89b9bcb606e6f2d4a90b219bebb24d",
+            "git_annex_key": "SHA256E-s101438154--33f631a091cc80cbacfe0d0b978cb43dac89b9bcb606e6f2d4a90b219bebb24d.nii.gz"
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-mag_bold.json",
+            "size_bytes": 3248,
+            "sha256": "21a0fc440eb37591b8c68ad5099c89cb2d6ab20c1ab01fd8d6797bf76f39e8aa",
+            "git_annex_key": null
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-phase_bold.nii.gz",
+            "size_bytes": 134328668,
+            "sha256": "763b06d2515ca772d55729a144304cdcc13c40427901ae64b67160df61b58c13",
+            "git_annex_key": "SHA256E-s134328668--763b06d2515ca772d55729a144304cdcc13c40427901ae64b67160df61b58c13.nii.gz"
+          },
+          {
+            "path": "sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-phase_bold.json",
+            "size_bytes": 3296,
+            "sha256": "775ff8d0c1802d08661bdcf27cc5328cae55542db9dd32c74deed95cd797676c",
+            "git_annex_key": null
+          }
+        ],
+        "echo_count": 4,
+        "echoes": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "frame_count": 240,
+        "image_dimensions": [
+          80,
+          80,
+          51
+        ],
+        "voxel_size_mm": [
+          2.700000047683716,
+          2.700000047683716,
+          2.9700000286102295
+        ],
+        "echo_times_ms": [
+          13.799999999999999,
+          31.54,
+          49.279999999999994,
+          67.02
+        ],
+        "total_readout_time_seconds": 0.0193552,
+        "phase_encoding_direction": "j-"
+      },
+      "mask": "built-in for both",
+      "runs": {
+        "1": {
+          "warpkit": {
+            "measurements": [
+              {
+                "status": "complete",
+                "started_at": "2026-07-29T16:46:59.256003-04:00",
+                "estimate": {
+                  "wall": 399.9555406374857,
+                  "peak_gb": 5.13397216796875,
+                  "rc": 0,
+                  "command": [
+                    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-medic",
+                    "--magnitude",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-mag_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-mag_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-mag_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-mag_bold.nii.gz",
+                    "--phase",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-phase_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-phase_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-phase_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-phase_bold.nii.gz",
+                    "--metadata",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-phase_bold.json",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-phase_bold.json",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-phase_bold.json",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-phase_bold.json",
+                    "--out-prefix",
+                    "bench_out/linux1/openneuro-ds005123/warpkit/1/fmap",
+                    "-n",
+                    "1"
+                  ],
+                  "environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "FSLOUTPUTTYPE": "NIFTI"
+                  },
+                  "stdout_tail": "\n[2026-07-29 16:53:10,670] INFO: Processing frame: 167\n[2026-07-29 16:53:10,921] INFO: Processing frame: 168\n[2026-07-29 16:53:11,182] INFO: Processing frame: 169\n[2026-07-29 16:53:11,425] INFO: Processing frame: 170\n[2026-07-29 16:53:11,667] INFO: Processing frame: 171\n[2026-07-29 16:53:11,909] INFO: Processing frame: 172\n[2026-07-29 16:53:12,152] INFO: Processing frame: 173\n[2026-07-29 16:53:12,396] INFO: Processing frame: 174\n[2026-07-29 16:53:12,641] INFO: Processing frame: 175\n[2026-07-29 16:53:12,882] INFO: Processing frame: 176\n[2026-07-29 16:53:13,125] INFO: Processing frame: 177\n[2026-07-29 16:53:13,379] INFO: Processing frame: 178\n[2026-07-29 16:53:13,637] INFO: Processing frame: 179\n[2026-07-29 16:53:13,878] INFO: Processing frame: 180\n[2026-07-29 16:53:14,119] INFO: Processing frame: 181\n[2026-07-29 16:53:14,364] INFO: Processing frame: 182\n[2026-07-29 16:53:14,606] INFO: Processing frame: 183\n[2026-07-29 16:53:14,850] INFO: Processing frame: 184\n[2026-07-29 16:53:15,095] INFO: Processing frame: 185\n[2026-07-29 16:53:15,337] INFO: Processing frame: 186\n[2026-07-29 16:53:15,579] INFO: Processing frame: 187\n[2026-07-29 16:53:15,838] INFO: Processing frame: 188\n[2026-07-29 16:53:16,090] INFO: Processing frame: 189\n[2026-07-29 16:53:16,332] INFO: Processing frame: 190\n[2026-07-29 16:53:16,574] INFO: Processing frame: 191\n[2026-07-29 16:53:16,820] INFO: Processing frame: 192\n[2026-07-29 16:53:17,063] INFO: Processing frame: 193\n[2026-07-29 16:53:17,304] INFO: Processing frame: 194\n[2026-07-29 16:53:17,546] INFO: Processing frame: 195\n[2026-07-29 16:53:17,787] INFO: Processing frame: 196\n[2026-07-29 16:53:18,034] INFO: Processing frame: 197\n[2026-07-29 16:53:18,297] INFO: Processing frame: 198\n[2026-07-29 16:53:18,544] INFO: Processing frame: 199\n[2026-07-29 16:53:18,794] INFO: Processing frame: 200\n[2026-07-29 16:53:19,036] INFO: Processing frame: 201\n[2026-07-29 16:53:19,278] INFO: Processing frame: 202\n[2026-07-29 16:53:19,520] INFO: Processing frame: 203\n[2026-07-29 16:53:19,764] INFO: Processing frame: 204\n[2026-07-29 16:53:20,007] INFO: Processing frame: 205\n[2026-07-29 16:53:20,249] INFO: Processing frame: 206\n[2026-07-29 16:53:20,500] INFO: Processing frame: 207\n[2026-07-29 16:53:20,762] INFO: Processing frame: 208\n[2026-07-29 16:53:21,004] INFO: Processing frame: 209\n[2026-07-29 16:53:21,247] INFO: Processing frame: 210\n[2026-07-29 16:53:21,488] INFO: Processing frame: 211\n[2026-07-29 16:53:21,733] INFO: Processing frame: 212\n[2026-07-29 16:53:21,975] INFO: Processing frame: 213\n[2026-07-29 16:53:22,216] INFO: Processing frame: 214\n[2026-07-29 16:53:22,458] INFO: Processing frame: 215\n[2026-07-29 16:53:22,707] INFO: Processing frame: 216\n[2026-07-29 16:53:22,963] INFO: Processing frame: 217\n[2026-07-29 16:53:23,220] INFO: Processing frame: 218\n[2026-07-29 16:53:23,462] INFO: Processing frame: 219\n[2026-07-29 16:53:23,704] INFO: Processing frame: 220\n[2026-07-29 16:53:23,946] INFO: Processing frame: 221\n[2026-07-29 16:53:24,188] INFO: Processing frame: 222\n[2026-07-29 16:53:24,432] INFO: Processing frame: 223\n[2026-07-29 16:53:24,680] INFO: Processing frame: 224\n[2026-07-29 16:53:24,921] INFO: Processing frame: 225\n[2026-07-29 16:53:25,163] INFO: Processing frame: 226\n[2026-07-29 16:53:25,426] INFO: Processing frame: 227\n[2026-07-29 16:53:25,677] INFO: Processing frame: 228\n[2026-07-29 16:53:25,918] INFO: Processing frame: 229\n[2026-07-29 16:53:26,160] INFO: Processing frame: 230\n[2026-07-29 16:53:26,402] INFO: Processing frame: 231\n[2026-07-29 16:53:26,649] INFO: Processing frame: 232\n[2026-07-29 16:53:26,891] INFO: Processing frame: 233\n[2026-07-29 16:53:27,133] INFO: Processing frame: 234\n[2026-07-29 16:53:27,375] INFO: Processing frame: 235\n[2026-07-29 16:53:27,617] INFO: Processing frame: 236\n[2026-07-29 16:53:27,870] INFO: Processing frame: 237\n[2026-07-29 16:53:28,117] INFO: Processing frame: 238\n[2026-07-29 16:53:28,359] INFO: Processing frame: 239\nSaving field maps and displacement maps to file...\nDone.\n"
+                },
+                "apply": {
+                  "status": "complete",
+                  "wall": 11033.543347249739,
+                  "peak_gb": 1.8759422302246094,
+                  "completed_echoes": 4,
+                  "commands": [
+                    {
+                      "wall": 3268.8483605058864,
+                      "peak_gb": 1.871734619140625,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/1/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/1/undistorted_echo-1.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/openneuro-ds005123/warpkit/1/fmap_displacementmaps.nii'], output='bench_out/linux1/openneuro-ds005123/warpkit/1/undistorted_echo-1.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 240; transform frames: 240 (type=map)\n  resampled frame 10/240\n  resampled frame 20/240\n  resampled frame 30/240\n  resampled frame 40/240\n  resampled frame 50/240\n  resampled frame 60/240\n  resampled frame 70/240\n  resampled frame 80/240\n  resampled frame 90/240\n  resampled frame 100/240\n  resampled frame 110/240\n  resampled frame 120/240\n  resampled frame 130/240\n  resampled frame 140/240\n  resampled frame 150/240\n  resampled frame 160/240\n  resampled frame 170/240\n  resampled frame 180/240\n  resampled frame 190/240\n  resampled frame 200/240\n  resampled frame 210/240\n  resampled frame 220/240\n  resampled frame 230/240\n  resampled frame 240/240\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/openneuro-ds005123/warpkit/1/undistorted_echo-1.nii...\nDone.\n"
+                    },
+                    {
+                      "wall": 2599.2515087760985,
+                      "peak_gb": 1.8735008239746094,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/1/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/1/undistorted_echo-2.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/openneuro-ds005123/warpkit/1/fmap_displacementmaps.nii'], output='bench_out/linux1/openneuro-ds005123/warpkit/1/undistorted_echo-2.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 240; transform frames: 240 (type=map)\n  resampled frame 10/240\n  resampled frame 20/240\n  resampled frame 30/240\n  resampled frame 40/240\n  resampled frame 50/240\n  resampled frame 60/240\n  resampled frame 70/240\n  resampled frame 80/240\n  resampled frame 90/240\n  resampled frame 100/240\n  resampled frame 110/240\n  resampled frame 120/240\n  resampled frame 130/240\n  resampled frame 140/240\n  resampled frame 150/240\n  resampled frame 160/240\n  resampled frame 170/240\n  resampled frame 180/240\n  resampled frame 190/240\n  resampled frame 200/240\n  resampled frame 210/240\n  resampled frame 220/240\n  resampled frame 230/240\n  resampled frame 240/240\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/openneuro-ds005123/warpkit/1/undistorted_echo-2.nii...\nDone.\n"
+                    },
+                    {
+                      "wall": 2598.9295754330233,
+                      "peak_gb": 1.8750953674316406,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/1/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/1/undistorted_echo-3.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/openneuro-ds005123/warpkit/1/fmap_displacementmaps.nii'], output='bench_out/linux1/openneuro-ds005123/warpkit/1/undistorted_echo-3.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 240; transform frames: 240 (type=map)\n  resampled frame 10/240\n  resampled frame 20/240\n  resampled frame 30/240\n  resampled frame 40/240\n  resampled frame 50/240\n  resampled frame 60/240\n  resampled frame 70/240\n  resampled frame 80/240\n  resampled frame 90/240\n  resampled frame 100/240\n  resampled frame 110/240\n  resampled frame 120/240\n  resampled frame 130/240\n  resampled frame 140/240\n  resampled frame 150/240\n  resampled frame 160/240\n  resampled frame 170/240\n  resampled frame 180/240\n  resampled frame 190/240\n  resampled frame 200/240\n  resampled frame 210/240\n  resampled frame 220/240\n  resampled frame 230/240\n  resampled frame 240/240\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/openneuro-ds005123/warpkit/1/undistorted_echo-3.nii...\nDone.\n"
+                    },
+                    {
+                      "wall": 2566.5139025347307,
+                      "peak_gb": 1.8759422302246094,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/1/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/1/undistorted_echo-4.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/openneuro-ds005123/warpkit/1/fmap_displacementmaps.nii'], output='bench_out/linux1/openneuro-ds005123/warpkit/1/undistorted_echo-4.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 240; transform frames: 240 (type=map)\n  resampled frame 10/240\n  resampled frame 20/240\n  resampled frame 30/240\n  resampled frame 40/240\n  resampled frame 50/240\n  resampled frame 60/240\n  resampled frame 70/240\n  resampled frame 80/240\n  resampled frame 90/240\n  resampled frame 100/240\n  resampled frame 110/240\n  resampled frame 120/240\n  resampled frame 130/240\n  resampled frame 140/240\n  resampled frame 150/240\n  resampled frame 160/240\n  resampled frame 170/240\n  resampled frame 180/240\n  resampled frame 190/240\n  resampled frame 200/240\n  resampled frame 210/240\n  resampled frame 220/240\n  resampled frame 230/240\n  resampled frame 240/240\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/openneuro-ds005123/warpkit/1/undistorted_echo-4.nii...\nDone.\n"
+                    }
+                  ]
+                },
+                "completed_at": "2026-07-29T19:57:32.969248-04:00"
+              }
+            ]
+          },
+          "niimath": {
+            "measurements": [
+              {
+                "status": "complete",
+                "started_at": "2026-07-29T19:57:32.970231-04:00",
+                "estimate": {
+                  "wall": 130.63796380907297,
+                  "peak_gb": 3.2927513122558594,
+                  "rc": 0,
+                  "command": [
+                    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                    "--medic",
+                    "--magnitude",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-mag_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-mag_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-mag_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-mag_bold.nii.gz",
+                    "--phase",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-phase_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-phase_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-phase_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-phase_bold.nii.gz",
+                    "--te-ms",
+                    "13.8,31.54,49.28,67.02",
+                    "--total-readout-time",
+                    "0.0193552",
+                    "--phase-encoding-direction",
+                    "j-",
+                    "--n-cpus",
+                    "1",
+                    "--gz",
+                    "0",
+                    "--out-prefix",
+                    "bench_out/linux1/openneuro-ds005123/niimath/1/fmap"
+                  ],
+                  "environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "FSLOUTPUTTYPE": "NIFTI"
+                  },
+                  "stderr_tail": "--medic: 80x80x51, 4 echo(es), 240 frame(s); working set ~3.21 GiB\n--medic: displacement inversion: 266822 voxel(s) (0.341%) still moving by >0.001 Hz after 64 iterations; 43033 folded adjacent pair(s) (0.055% of voxels) mark columns where the forward map is not monotone, so the inverse is multi-valued and the branch chosen is arbitrary\n"
+                },
+                "apply": {
+                  "status": "complete",
+                  "wall": 148.09870530571789,
+                  "peak_gb": 0.8777923583984375,
+                  "completed_echoes": 4,
+                  "commands": [
+                    {
+                      "wall": 36.847474495880306,
+                      "peak_gb": 0.8777923583984375,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-mag_bold.nii.gz",
+                        "-p",
+                        "1",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/openneuro-ds005123/niimath/1/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/openneuro-ds005123/niimath/1/undistorted_echo-1.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 1 threads\n"
+                    },
+                    {
+                      "wall": 36.653525612317026,
+                      "peak_gb": 0.8771705627441406,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-mag_bold.nii.gz",
+                        "-p",
+                        "1",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/openneuro-ds005123/niimath/1/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/openneuro-ds005123/niimath/1/undistorted_echo-2.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 1 threads\n"
+                    },
+                    {
+                      "wall": 36.6315949447453,
+                      "peak_gb": 0.8772392272949219,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-mag_bold.nii.gz",
+                        "-p",
+                        "1",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/openneuro-ds005123/niimath/1/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/openneuro-ds005123/niimath/1/undistorted_echo-3.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 1 threads\n"
+                    },
+                    {
+                      "wall": 37.96611025277525,
+                      "peak_gb": 0.87567138671875,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-mag_bold.nii.gz",
+                        "-p",
+                        "1",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/openneuro-ds005123/niimath/1/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/openneuro-ds005123/niimath/1/undistorted_echo-4.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "1",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "1",
+                        "MKL_NUM_THREADS": "1",
+                        "OPENBLAS_NUM_THREADS": "1",
+                        "NUMEXPR_NUM_THREADS": "1",
+                        "VECLIB_MAXIMUM_THREADS": "1",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 1 threads\n"
+                    }
+                  ]
+                },
+                "completed_at": "2026-07-29T20:02:11.925584-04:00"
+              }
+            ]
+          }
+        },
+        "16": {
+          "warpkit": {
+            "measurements": [
+              {
+                "status": "complete",
+                "started_at": "2026-07-29T20:02:11.926308-04:00",
+                "estimate": {
+                  "wall": 213.64551975671202,
+                  "peak_gb": 4.951847076416016,
+                  "rc": 0,
+                  "command": [
+                    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-medic",
+                    "--magnitude",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-mag_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-mag_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-mag_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-mag_bold.nii.gz",
+                    "--phase",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-phase_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-phase_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-phase_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-phase_bold.nii.gz",
+                    "--metadata",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-phase_bold.json",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-phase_bold.json",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-phase_bold.json",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-phase_bold.json",
+                    "--out-prefix",
+                    "bench_out/linux1/openneuro-ds005123/warpkit/16/fmap",
+                    "-n",
+                    "16"
+                  ],
+                  "environment": {
+                    "OMP_NUM_THREADS": "16",
+                    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                    "MKL_NUM_THREADS": "16",
+                    "OPENBLAS_NUM_THREADS": "16",
+                    "NUMEXPR_NUM_THREADS": "16",
+                    "VECLIB_MAXIMUM_THREADS": "16",
+                    "FSLOUTPUTTYPE": "NIFTI"
+                  },
+                  "stdout_tail": "\n[2026-07-29 20:05:25,646] INFO: Processing frame: 167\n[2026-07-29 20:05:25,701] INFO: Processing frame: 168\n[2026-07-29 20:05:25,753] INFO: Processing frame: 169\n[2026-07-29 20:05:25,806] INFO: Processing frame: 170\n[2026-07-29 20:05:25,859] INFO: Processing frame: 171\n[2026-07-29 20:05:25,913] INFO: Processing frame: 172\n[2026-07-29 20:05:25,967] INFO: Processing frame: 173\n[2026-07-29 20:05:26,020] INFO: Processing frame: 174\n[2026-07-29 20:05:26,073] INFO: Processing frame: 175\n[2026-07-29 20:05:26,128] INFO: Processing frame: 176\n[2026-07-29 20:05:26,183] INFO: Processing frame: 177\n[2026-07-29 20:05:26,239] INFO: Processing frame: 178\n[2026-07-29 20:05:26,296] INFO: Processing frame: 179\n[2026-07-29 20:05:26,352] INFO: Processing frame: 180\n[2026-07-29 20:05:26,409] INFO: Processing frame: 181\n[2026-07-29 20:05:26,469] INFO: Processing frame: 182\n[2026-07-29 20:05:26,532] INFO: Processing frame: 183\n[2026-07-29 20:05:26,593] INFO: Processing frame: 184\n[2026-07-29 20:05:26,654] INFO: Processing frame: 185\n[2026-07-29 20:05:26,718] INFO: Processing frame: 186\n[2026-07-29 20:05:26,782] INFO: Processing frame: 187\n[2026-07-29 20:05:26,843] INFO: Processing frame: 188\n[2026-07-29 20:05:26,905] INFO: Processing frame: 189\n[2026-07-29 20:05:26,966] INFO: Processing frame: 190\n[2026-07-29 20:05:27,025] INFO: Processing frame: 191\n[2026-07-29 20:05:27,086] INFO: Processing frame: 192\n[2026-07-29 20:05:27,147] INFO: Processing frame: 193\n[2026-07-29 20:05:27,212] INFO: Processing frame: 194\n[2026-07-29 20:05:27,274] INFO: Processing frame: 195\n[2026-07-29 20:05:27,330] INFO: Processing frame: 196\n[2026-07-29 20:05:27,387] INFO: Processing frame: 197\n[2026-07-29 20:05:27,494] INFO: Processing frame: 198\n[2026-07-29 20:05:27,555] INFO: Processing frame: 199\n[2026-07-29 20:05:27,609] INFO: Processing frame: 200\n[2026-07-29 20:05:27,662] INFO: Processing frame: 201\n[2026-07-29 20:05:27,716] INFO: Processing frame: 202\n[2026-07-29 20:05:27,770] INFO: Processing frame: 203\n[2026-07-29 20:05:27,903] INFO: Processing frame: 204\n[2026-07-29 20:05:27,961] INFO: Processing frame: 205\n[2026-07-29 20:05:28,016] INFO: Processing frame: 206\n[2026-07-29 20:05:28,071] INFO: Processing frame: 207\n[2026-07-29 20:05:28,123] INFO: Processing frame: 208\n[2026-07-29 20:05:28,175] INFO: Processing frame: 209\n[2026-07-29 20:05:28,353] INFO: Processing frame: 210\n[2026-07-29 20:05:28,522] INFO: Processing frame: 211\n[2026-07-29 20:05:28,577] INFO: Processing frame: 212\n[2026-07-29 20:05:28,632] INFO: Processing frame: 213\n[2026-07-29 20:05:28,688] INFO: Processing frame: 214\n[2026-07-29 20:05:28,741] INFO: Processing frame: 215\n[2026-07-29 20:05:28,796] INFO: Processing frame: 216\n[2026-07-29 20:05:28,850] INFO: Processing frame: 217\n[2026-07-29 20:05:28,903] INFO: Processing frame: 218\n[2026-07-29 20:05:28,957] INFO: Processing frame: 219\n[2026-07-29 20:05:29,011] INFO: Processing frame: 220\n[2026-07-29 20:05:29,066] INFO: Processing frame: 221\n[2026-07-29 20:05:29,120] INFO: Processing frame: 222\n[2026-07-29 20:05:29,174] INFO: Processing frame: 223\n[2026-07-29 20:05:29,228] INFO: Processing frame: 224\n[2026-07-29 20:05:29,288] INFO: Processing frame: 225\n[2026-07-29 20:05:29,376] INFO: Processing frame: 226\n[2026-07-29 20:05:29,431] INFO: Processing frame: 227\n[2026-07-29 20:05:29,484] INFO: Processing frame: 228\n[2026-07-29 20:05:29,547] INFO: Processing frame: 229\n[2026-07-29 20:05:29,602] INFO: Processing frame: 230\n[2026-07-29 20:05:29,657] INFO: Processing frame: 231\n[2026-07-29 20:05:29,711] INFO: Processing frame: 232\n[2026-07-29 20:05:29,766] INFO: Processing frame: 233\n[2026-07-29 20:05:29,821] INFO: Processing frame: 234\n[2026-07-29 20:05:29,874] INFO: Processing frame: 235\n[2026-07-29 20:05:29,935] INFO: Processing frame: 236\n[2026-07-29 20:05:29,990] INFO: Processing frame: 237\n[2026-07-29 20:05:30,045] INFO: Processing frame: 238\n[2026-07-29 20:05:30,099] INFO: Processing frame: 239\nSaving field maps and displacement maps to file...\nDone.\n"
+                },
+                "apply": {
+                  "status": "complete",
+                  "wall": 4817.741711098701,
+                  "peak_gb": 1.872161865234375,
+                  "completed_echoes": 4,
+                  "commands": [
+                    {
+                      "wall": 1142.6755639128387,
+                      "peak_gb": 1.8643150329589844,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/16/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/16/undistorted_echo-1.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/openneuro-ds005123/warpkit/16/fmap_displacementmaps.nii'], output='bench_out/linux1/openneuro-ds005123/warpkit/16/undistorted_echo-1.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 240; transform frames: 240 (type=map)\n  resampled frame 10/240\n  resampled frame 20/240\n  resampled frame 30/240\n  resampled frame 40/240\n  resampled frame 50/240\n  resampled frame 60/240\n  resampled frame 70/240\n  resampled frame 80/240\n  resampled frame 90/240\n  resampled frame 100/240\n  resampled frame 110/240\n  resampled frame 120/240\n  resampled frame 130/240\n  resampled frame 140/240\n  resampled frame 150/240\n  resampled frame 160/240\n  resampled frame 170/240\n  resampled frame 180/240\n  resampled frame 190/240\n  resampled frame 200/240\n  resampled frame 210/240\n  resampled frame 220/240\n  resampled frame 230/240\n  resampled frame 240/240\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/openneuro-ds005123/warpkit/16/undistorted_echo-1.nii...\nDone.\n"
+                    },
+                    {
+                      "wall": 1350.2998804394156,
+                      "peak_gb": 1.8653755187988281,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/16/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/16/undistorted_echo-2.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/openneuro-ds005123/warpkit/16/fmap_displacementmaps.nii'], output='bench_out/linux1/openneuro-ds005123/warpkit/16/undistorted_echo-2.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 240; transform frames: 240 (type=map)\n  resampled frame 10/240\n  resampled frame 20/240\n  resampled frame 30/240\n  resampled frame 40/240\n  resampled frame 50/240\n  resampled frame 60/240\n  resampled frame 70/240\n  resampled frame 80/240\n  resampled frame 90/240\n  resampled frame 100/240\n  resampled frame 110/240\n  resampled frame 120/240\n  resampled frame 130/240\n  resampled frame 140/240\n  resampled frame 150/240\n  resampled frame 160/240\n  resampled frame 170/240\n  resampled frame 180/240\n  resampled frame 190/240\n  resampled frame 200/240\n  resampled frame 210/240\n  resampled frame 220/240\n  resampled frame 230/240\n  resampled frame 240/240\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/openneuro-ds005123/warpkit/16/undistorted_echo-2.nii...\nDone.\n"
+                    },
+                    {
+                      "wall": 1116.8551360536367,
+                      "peak_gb": 1.8670997619628906,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/16/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/16/undistorted_echo-3.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/openneuro-ds005123/warpkit/16/fmap_displacementmaps.nii'], output='bench_out/linux1/openneuro-ds005123/warpkit/16/undistorted_echo-3.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 240; transform frames: 240 (type=map)\n  resampled frame 10/240\n  resampled frame 20/240\n  resampled frame 30/240\n  resampled frame 40/240\n  resampled frame 50/240\n  resampled frame 60/240\n  resampled frame 70/240\n  resampled frame 80/240\n  resampled frame 90/240\n  resampled frame 100/240\n  resampled frame 110/240\n  resampled frame 120/240\n  resampled frame 130/240\n  resampled frame 140/240\n  resampled frame 150/240\n  resampled frame 160/240\n  resampled frame 170/240\n  resampled frame 180/240\n  resampled frame 190/240\n  resampled frame 200/240\n  resampled frame 210/240\n  resampled frame 220/240\n  resampled frame 230/240\n  resampled frame 240/240\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/openneuro-ds005123/warpkit/16/undistorted_echo-3.nii...\nDone.\n"
+                    },
+                    {
+                      "wall": 1207.9111306928098,
+                      "peak_gb": 1.872161865234375,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/warpkit-1.4.1/bin/wk-apply-warp",
+                        "--input",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-mag_bold.nii.gz",
+                        "--transform",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/16/fmap_displacementmaps.nii",
+                        "--transform-type",
+                        "map",
+                        "--phase-encoding-axis",
+                        "j",
+                        "--output",
+                        "bench_out/linux1/openneuro-ds005123/warpkit/16/undistorted_echo-4.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stdout_tail": "wk-apply-warp: Namespace(input='/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-mag_bold.nii.gz', reference=None, transform=['bench_out/linux1/openneuro-ds005123/warpkit/16/fmap_displacementmaps.nii'], output='bench_out/linux1/openneuro-ds005123/warpkit/16/undistorted_echo-4.nii', transform_type='map', phase_encoding_axis='j', format='itk')\n  input frames: 240; transform frames: 240 (type=map)\n  resampled frame 10/240\n  resampled frame 20/240\n  resampled frame 30/240\n  resampled frame 40/240\n  resampled frame 50/240\n  resampled frame 60/240\n  resampled frame 70/240\n  resampled frame 80/240\n  resampled frame 90/240\n  resampled frame 100/240\n  resampled frame 110/240\n  resampled frame 120/240\n  resampled frame 130/240\n  resampled frame 140/240\n  resampled frame 150/240\n  resampled frame 160/240\n  resampled frame 170/240\n  resampled frame 180/240\n  resampled frame 190/240\n  resampled frame 200/240\n  resampled frame 210/240\n  resampled frame 220/240\n  resampled frame 230/240\n  resampled frame 240/240\nSaving resampled image to /ZPOOL/data/projects/medic_bench/bench_out/linux1/openneuro-ds005123/warpkit/16/undistorted_echo-4.nii...\nDone.\n"
+                    }
+                  ]
+                },
+                "completed_at": "2026-07-29T21:26:03.538562-04:00"
+              }
+            ]
+          },
+          "niimath": {
+            "measurements": [
+              {
+                "status": "complete",
+                "started_at": "2026-07-29T21:26:03.539334-04:00",
+                "estimate": {
+                  "wall": 40.10396646056324,
+                  "peak_gb": 3.408519744873047,
+                  "rc": 0,
+                  "command": [
+                    "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                    "--medic",
+                    "--magnitude",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-mag_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-mag_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-mag_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-mag_bold.nii.gz",
+                    "--phase",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-phase_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-phase_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-phase_bold.nii.gz",
+                    "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-phase_bold.nii.gz",
+                    "--te-ms",
+                    "13.8,31.54,49.28,67.02",
+                    "--total-readout-time",
+                    "0.0193552",
+                    "--phase-encoding-direction",
+                    "j-",
+                    "--n-cpus",
+                    "16",
+                    "--gz",
+                    "0",
+                    "--out-prefix",
+                    "bench_out/linux1/openneuro-ds005123/niimath/16/fmap"
+                  ],
+                  "environment": {
+                    "OMP_NUM_THREADS": "16",
+                    "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                    "MKL_NUM_THREADS": "16",
+                    "OPENBLAS_NUM_THREADS": "16",
+                    "NUMEXPR_NUM_THREADS": "16",
+                    "VECLIB_MAXIMUM_THREADS": "16",
+                    "FSLOUTPUTTYPE": "NIFTI"
+                  },
+                  "stderr_tail": "--medic: 80x80x51, 4 echo(es), 240 frame(s); working set ~3.21 GiB\n--medic: displacement inversion: 266822 voxel(s) (0.341%) still moving by >0.001 Hz after 64 iterations; 43033 folded adjacent pair(s) (0.055% of voxels) mark columns where the forward map is not monotone, so the inverse is multi-valued and the branch chosen is arbitrary\n"
+                },
+                "apply": {
+                  "status": "complete",
+                  "wall": 19.166597451083362,
+                  "peak_gb": 0.8734359741210938,
+                  "completed_echoes": 4,
+                  "commands": [
+                    {
+                      "wall": 4.710082441568375,
+                      "peak_gb": 0.8734359741210938,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-1_part-mag_bold.nii.gz",
+                        "-p",
+                        "16",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/openneuro-ds005123/niimath/16/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/openneuro-ds005123/niimath/16/undistorted_echo-1.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 16 threads\n"
+                    },
+                    {
+                      "wall": 4.710910312831402,
+                      "peak_gb": 0.8728065490722656,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-2_part-mag_bold.nii.gz",
+                        "-p",
+                        "16",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/openneuro-ds005123/niimath/16/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/openneuro-ds005123/niimath/16/undistorted_echo-2.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 16 threads\n"
+                    },
+                    {
+                      "wall": 5.0370647348463535,
+                      "peak_gb": 0.8729057312011719,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-3_part-mag_bold.nii.gz",
+                        "-p",
+                        "16",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/openneuro-ds005123/niimath/16/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/openneuro-ds005123/niimath/16/undistorted_echo-3.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 16 threads\n"
+                    },
+                    {
+                      "wall": 4.708539961837232,
+                      "peak_gb": 0.8726654052734375,
+                      "rc": 0,
+                      "command": [
+                        "/ZPOOL/data/projects/medic_bench/.benchmark-tools/niimath-9dda863702e6/bin/niimath",
+                        "/home/tug87422@tu.temple.edu/.cache/medic_bench/openneuro/ds005123/1.1.3/sub-10317/func/sub-10317_task-ugr_run-1_echo-4_part-mag_bold.nii.gz",
+                        "-p",
+                        "16",
+                        "-gz",
+                        "0",
+                        "-unwarp",
+                        "bench_out/linux1/openneuro-ds005123/niimath/16/fmap_displacementmaps.nii",
+                        "j",
+                        "bench_out/linux1/openneuro-ds005123/niimath/16/undistorted_echo-4.nii"
+                      ],
+                      "environment": {
+                        "OMP_NUM_THREADS": "16",
+                        "ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS": "16",
+                        "MKL_NUM_THREADS": "16",
+                        "OPENBLAS_NUM_THREADS": "16",
+                        "NUMEXPR_NUM_THREADS": "16",
+                        "VECLIB_MAXIMUM_THREADS": "16",
+                        "FSLOUTPUTTYPE": "NIFTI"
+                      },
+                      "stderr_tail": "Using 16 threads\n"
+                    }
+                  ]
+                },
+                "completed_at": "2026-07-29T21:27:03.033006-04:00"
+              }
+            ]
+          }
+        }
+      },
+      "agreement": {
+        "1": {
+          "status": "complete",
+          "corr": 0.9981994018239215,
+          "voxels": 78336000,
+          "engine": "numpy-memmap"
+        },
+        "16": {
+          "status": "complete",
+          "corr": 0.9981994018239215,
+          "voxels": 78336000,
+          "engine": "numpy-memmap"
+        }
+      },
+      "failures": []
+    }
+  }
+}
