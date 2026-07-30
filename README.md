@@ -41,69 +41,103 @@ provenance, repeat-ready JSON, and comparison reports, see
 `echo2` and `echo3` datasets remain the default, so existing commands continue
 to work.
 
-**Budget about 75 minutes for the full matrix on a modern workstation, and note that almost all of it is one arm.** `wk-apply-warp` has no thread option, so pinning it to a single thread (required for a single-threaded row) takes it to roughly 15 minutes per echo. The other seven arms together finish in a few minutes. If you only want the multi-threaded comparison, `python3 bench.py --threads 8` runs in well under ten minutes.
+Runtime depends strongly on the host and dataset. The pinned three-dataset
+matrix took **2 h 41 min** on the Apple M3 MacBook Air and **7 h 9 min** on
+the Xeon Silver 4116 Linux host. Most of that time was `wk-apply-warp`; the
+full timing and machine provenance are in
+[`results/comparison.md`](results/comparison.md).
 
 Three choices make the comparison like-for-like:
 
 - **Uncompressed NIfTI throughout.** gzip is a large, single-threaded share of niimath's wall time, and warpkit writes `.nii` by default. Compressing one side and not the other measures zlib, not MEDIC.
 - **Each tool applies its own displacement maps**, so each is timed on the workflow a user would actually run rather than on a hybrid.
-- **Thread counts are pinned by environment** (`OMP_NUM_THREADS`, `ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS` and the BLAS equivalents) as well as by each tool's own flag. `wk-apply-warp` has no thread option, so without this its single-thread row would quietly be a full-machine run.
+- **Thread counts are requested ceilings, not measured utilization.**
+  `wk-medic` receives `-n`, niimath receives `--n-cpus` / `-p`, and the
+  standard OpenMP, ITK, and BLAS environment limits are set. However,
+  `wk-apply-warp` has no thread-count option and its Python driver traverses
+  echoes and frames serially. Its native code may use several threads within
+  a resampling call, but a “16-thread” row must not be read as sustained use
+  of 16 processors.
 
 Peak RSS comes from `getrusage(RUSAGE_CHILDREN)` inside a one-shot wrapper process, so every figure belongs to exactly one command.
 
 ## The datasets
 
-Both are single-subject resting-state runs at 76 × 76 × 46, 2.8 mm, `TotalReadoutTime` 0.02025 s, phase-encoding `j`.
+The two repository datasets are single-subject resting-state runs. The pinned
+cross-platform benchmark adds one complete, uncropped public OpenNeuro run
+selected by [`manifests/openneuro-ds005123-1.1.3.json`](manifests/openneuro-ds005123-1.1.3.json).
 
-| dataset | echoes | frames | echo times (ms) |
-| --- | --- | --- | --- |
-| `echo2` | 2 | 170 | 16.80, 38.56 |
-| `echo3` | 3 | 138 | 14.80, 34.38, 53.94 |
+| dataset | geometry | echoes | frames | echo times (ms) | readout / PE |
+| --- | --- | ---: | ---: | --- | --- |
+| `echo2` | 76 × 76 × 46, 2.8 mm | 2 | 170 | 16.80, 38.56 | 0.02025 s / `j` |
+| `echo3` | 76 × 76 × 46, 2.8 mm | 3 | 138 | 14.80, 34.38, 53.94 | 0.02025 s / `j` |
+| `openneuro-ds005123` | 80 × 80 × 51, 2.7 × 2.7 × 2.97 mm | 4 | 240 | 13.80, 31.54, 49.28, 67.02 | 0.0193552 s / `j-` |
 
-`estimate` is one `wk-medic` / `niimath --medic` call producing the field and displacement maps. `apply` is the total across all echoes — two `wk-apply-warp` / `niimath -unwarp` calls for `echo2`, three for `echo3`.
+`estimate` is one `wk-medic` / `niimath --medic` call producing the field
+and displacement maps. `apply` is the total across all echoes: two
+`wk-apply-warp` / `niimath -unwarp` calls for `echo2`, three for `echo3`,
+and four for the OpenNeuro run.
 
-## Benchmarks
+## Cross-platform benchmark (2026-07-29)
+
+The pinned matrix completed without failures on an Apple M3 MacBook Air
+(4 performance cores, 16 GiB) and an Intel Xeon Silver 4116 Linux host
+(24 physical cores, 125.6 GiB). Both used warpkit 1.4.1, niimath commit
+`9dda863702e64078ab11061df65e6824251c293f`, and benchmark harness commit
+`5036d63cefa92d17b80325693a646865a9e7700b`.
+
+The table uses each platform's recorded native setting: 4 threads on the Mac
+and a 16-thread cap on Linux.
+
+| host | dataset | threads | warpkit end to end | niimath end to end | speed-up |
+| --- | --- | ---: | ---: | ---: | ---: |
+| M3 MacBook Air | `echo2` | 4 | 419.41 s | 14.39 s | **29.14×** |
+| M3 MacBook Air | `echo3` | 4 | 525.12 s | 18.86 s | **27.85×** |
+| M3 MacBook Air | `openneuro-ds005123` | 4 | 2115.00 s | 82.28 s | **25.71×** |
+| Xeon Linux | `echo2` | 16 | 1071.70 s | 21.17 s | **50.63×** |
+| Xeon Linux | `echo3` | 16 | 1309.33 s | 20.36 s | **64.31×** |
+| Xeon Linux | `openneuro-ds005123` | 16 | 5031.39 s | 59.27 s | **84.89×** |
+
+### What the completed run shows
+
+- **niimath was 25.71–84.89× faster end to end at the native settings.**
+  Looking only at field/displacement-map estimation, it was 2.15–6.26×
+  faster; the much larger 49.95–251.36× apply-stage difference dominates
+  the workflow result.
+- **The result reproduced across OS, architecture, compiler, and OpenMP
+  runtime.** Tool-to-tool corrected-image correlation was exactly
+  `0.9961670301619666` for `echo2`, `0.9962783108102466` for `echo3`, and
+  `0.9981994018239215` for the OpenNeuro run in both raw result files.
+  Correlation is an agreement check, not proof of numerical equivalence; the
+  remaining interpretation is discussed below.
+- **The M3 had substantially higher single-thread performance.** Across
+  like-for-like one-thread stages, Linux took 2.32–3.55× as long. Sixteen
+  Linux threads brought niimath close to or ahead of the four-core Mac result,
+  but did not close the Warpkit gap: native-setting Warpkit remained
+  2.38–2.56× slower on Linux.
+- **Apply-stage memory was lower for niimath in every recorded cell:**
+  0.41–1.02 GB versus 0.85–1.88 GB for Warpkit. Estimate-stage memory was
+  more data- and platform-dependent, so the results do not support a blanket
+  “half the memory” claim for the complete workflow.
+- **The full matrix took 2 h 41 min on the Mac and 7 h 9 min on Linux.**
+  The raw timestamps include tool checks, measurement, and agreement
+  calculation, but exclude environment creation and public-data retrieval.
+
+The native rows measure actual end-to-end behavior under a thread ceiling,
+not ideal parallel scaling. In particular, `wk-apply-warp` exposes no CPU-count
+argument and traverses the time series serially in its Python driver; only its
+native resampling call can use the thread-limited libraries. The apply numbers
+also use each implementation's own displacement map, so they measure the
+workflow a user runs rather than resampling a shared map.
+
+See the [complete comparison](results/comparison.md) for stage-level timing,
+peak RSS, machine/software provenance, and dataset identity checks. The
+authoritative inputs are
+[`results/macbook-air.json`](results/macbook-air.json) and
+[`results/linux1.json`](results/linux1.json); reproduction instructions are
+in [`docs/reproducing-benchmarks.md`](docs/reproducing-benchmarks.md).
 
 <!-- BENCH_TABLES -->
-
-Measured on Apple silicon (macOS, arm64; 10 performance + 4 efficiency cores, 48 GB), with warpkit 1.4.1 and niimath built from the current `--medic` sources against zlib-ng with OpenMP. Uncompressed NIfTI on both sides; thread counts pinned by environment as well as by each tool's own flag; the mindgrab mask supplied to niimath only. Regenerate with `python3 bench.py --update-readme`, or refresh one side with `python3 bench.py --tools niimath --merge bench_results.json --compare-dir bench_out`.
-
-`estimate` is a single call producing the field and displacement maps. `apply` is the total across all echoes — two calls for `echo2`, three for `echo3`.
-
-### echo2 — 2 echoes, 170 frames
-
-| stage | threads | warpkit wall | niimath wall | speed-up | warpkit peak RAM | niimath peak RAM |
-| --- | --- | --- | --- | --- | --- | --- |
-| estimate | 1 | 51.54 s | 12.36 s | **4.2x** | 3.49 GB | 1.70 GB |
-| estimate | 10 | 14.39 s | 3.15 s | **4.6x** | 4.36 GB | 1.90 GB |
-| apply | 1 | 770.44 s | 8.09 s | **95x** | 1.25 GB | 0.59 GB |
-| apply | 10 | 129.47 s | 1.41 s | **92x** | 1.25 GB | 0.59 GB |
-
-### echo3 — 3 echoes, 138 frames
-
-| stage | threads | warpkit wall | niimath wall | speed-up | warpkit peak RAM | niimath peak RAM |
-| --- | --- | --- | --- | --- | --- | --- |
-| estimate | 1 | 46.10 s | 9.96 s | **4.6x** | 3.20 GB | 1.66 GB |
-| estimate | 10 | 12.82 s | 2.88 s | **4.4x** | 3.83 GB | 1.83 GB |
-| apply | 1 | 957.98 s | 9.57 s | **100x** | 1.11 GB | 0.48 GB |
-| apply | 10 | 159.33 s | 1.86 s | **86x** | 1.13 GB | 0.48 GB |
-
-### End to end
-
-| dataset | threads | warpkit | niimath | speed-up |
-| --- | --- | --- | --- | --- |
-| `echo2` | 1 | 822 s (13.7 min) | 20.5 s | **40x** |
-| `echo2` | 10 | 144 s | 4.6 s | **32x** |
-| `echo3` | 1 | 1004 s (16.7 min) | 19.5 s | **51x** |
-| `echo3` | 10 | 172 s | 4.7 s | **36x** |
-
-### Reading these numbers
-
-- **The estimate stage is the fair fight**, and niimath is 4.2–4.6x faster at roughly half the memory. Both implement the same algorithm; the difference is C against a Python/ITK stack.
-- **The apply stage difference is much larger — 86x to 100x — and deserves a caveat.** `wk-apply-warp` has no thread option, so its single-threaded figures come from pinning it by environment; that is the honest way to obtain a single-threaded number, but it is not a configuration its authors optimised for. The multi-threaded rows (92x, 86x) are the more meaningful comparison, and are still a large difference: warpkit spends roughly 470 s of CPU per echo where niimath spends a few seconds.
-- **`-unwarp` timing is data-dependent**, so quote the map alongside the number. Its resampler has an exact fast path where the displacement is precisely zero (the sinc kernel vanishes at nonzero integers), and niimath's own maps are ~75 % exact zeros outside the brain mask, where a uint16-quantised reference map has none. The same 170-frame apply takes about 3x longer against a quantised map than against niimath's own.
-- **Memory is consistently lower**, and niimath's peak barely moves with thread count, whereas warpkit's estimate peak rises by 0.6–0.9 GB from 1 to 10 threads.
-- **Neither tool is fast because it skipped work.** The two corrected images correlate **0.9962** (`echo2`) and **0.9963** (`echo3`), unchanged across niimath revisions, and both move the input substantially (p95 absolute change 679–1047 intensity units against a signal ranging to ~2.3 x 10⁴). `bench.py` reports this correlation automatically and refuses to publish a timing from a command that failed.
 
 ## A note on brain masks
 
